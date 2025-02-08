@@ -18,8 +18,9 @@ CONFIG = {
     "epochs": 12,
     "learning_rates": [1.2e-4],
     "loss_function": "SmoothL1Loss",
+    "filtered_food_category": "Cheese", # Options in branded_food_category_count file or "no_filter"
     "nutrients_predicted": ["Protein", "Total Fat", "Sodium, Na", "Total Sugar", "Total Fiber"],
-    "sample_size": 20000,
+    "sample_size": 10000,
     "normalise": "none", # Options: "none", "Softmax"
     "hidden_layers": [ 512, 256, 128],
     "dropout_rate": 0.1,

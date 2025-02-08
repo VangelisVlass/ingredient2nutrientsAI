@@ -889,5 +889,93 @@
             "mse": 533.6363525390625,
             "r2_score": 0.358982652425766
         }
+    },
+    "a936f599": {
+        "experiment_id": "a936f599",
+        "timestamp": "2025-02-08 20:23:06",
+        "model_used": "distilbert-base-uncased",
+        "tokenizer_used": "distilbert-base-uncased",
+        "processed_data_file": "data.csv",
+        "tokenized_data_file": "tokenized_data.csv",
+        "long_ingredients_file": "long_ingredients.csv",
+        "branded_food_file": "C:\\Users\\vange\\Desktop\\FoodData_Central_branded_food_csv_2024-10-31\\branded_food.csv",
+        "food_nutrient_file": "C:\\Users\\vange\\Desktop\\FoodData_Central_branded_food_csv_2024-10-31\\food_nutrient.csv",
+        "max_token_length": 256,
+        "batch_size": 64,
+        "epochs": 12,
+        "learning_rates": [
+            0.00012
+        ],
+        "loss_function": "SmoothL1Loss",
+        "filtered_food_category": "Cheese",
+        "nutrients_predicted": [
+            "Protein",
+            "Total Fat",
+            "Sodium, Na",
+            "Total Sugar",
+            "Total Fiber"
+        ],
+        "sample_size": 80000,
+        "normalise": "none",
+        "hidden_layers": [
+            512,
+            256,
+            128
+        ],
+        "dropout_rate": 0.1,
+        "activation_function": "gelu",
+        "training_results": {
+            "experiment_id": "a936f599",
+            "learning_rate": 0.00012,
+            "best_validation_loss": 1.234501379609108,
+            "final_train_loss": 1.3236250320751826,
+            "mae": 1.4868309497833252,
+            "mse": 267.55450439453125,
+            "r2_score": 0.20629048347473145
+        }
+    },
+    "840b664f": {
+        "experiment_id": "840b664f",
+        "timestamp": "2025-02-08 22:03:14",
+        "model_used": "distilbert-base-uncased",
+        "tokenizer_used": "distilbert-base-uncased",
+        "processed_data_file": "data.csv",
+        "tokenized_data_file": "tokenized_data.csv",
+        "long_ingredients_file": "long_ingredients.csv",
+        "branded_food_file": "C:\\Users\\vange\\Desktop\\FoodData_Central_branded_food_csv_2024-10-31\\branded_food.csv",
+        "food_nutrient_file": "C:\\Users\\vange\\Desktop\\FoodData_Central_branded_food_csv_2024-10-31\\food_nutrient.csv",
+        "max_token_length": 256,
+        "batch_size": 64,
+        "epochs": 12,
+        "learning_rates": [
+            0.00012
+        ],
+        "loss_function": "SmoothL1Loss",
+        "filtered_food_category": "Cheese",
+        "nutrients_predicted": [
+            "Protein",
+            "Total Fat",
+            "Sodium, Na",
+            "Total Sugar",
+            "Total Fiber"
+        ],
+        "sample_size": 10000,
+        "normalise": "none",
+        "hidden_layers": [
+            512,
+            256,
+            128
+        ],
+        "dropout_rate": 0.1,
+        "activation_function": "gelu",
+        "training_results": {
+            "experiment_id": "840b664f",
+            "learning_rate": 0.00012,
+            "best_validation_loss": 1.4079614467918873,
+            "final_train_loss": 1.7394595694541932,
+            "mae": 1.734518051147461,
+            "mse": 44.97409439086914,
+            "r2_score": 0.23825772106647491
+        }
     }
 }

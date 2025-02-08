@@ -8,7 +8,7 @@ import numpy as np
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 from log_manager import log_message, log_execution_summary, log_training_results, log_best_validation_results, log_full_validation_predictions, EXPERIMENT_ID
-from process_data import process_data
+from process_data import process_data, save_branded_food_category
 from tokenize_ingredients import tokenize_ingredients
 from softmax import inverse_softmax
 from model import ModifiedDistilBERT 
@@ -51,6 +51,7 @@ def prepare_data():
     process_data(
         CONFIG["branded_food_file"],
         CONFIG["food_nutrient_file"],
+        CONFIG["filtered_food_category"],
         CONFIG["processed_data_file"],
         CONFIG["sample_size"],
     )

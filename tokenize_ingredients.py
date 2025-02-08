@@ -28,7 +28,7 @@ def tokenize_batch(ingredients_list , max_length=128):
         return {"input_ids": tokenized["input_ids"], "attention_mask": tokenized["attention_mask"]}
     except Exception as e:
         log_message(f"🚨 Tokenization error: {e}")
-        return {"input_ids": [], "attention_mask": []}  # Return empty to avoid crashing
+        return {"input_ids": [], "attention_mask": []} 
 
 def tokenize_ingredients(input_file="data.csv", output_file="tokenized_data.csv", long_file="long_ingredients.csv", max_length = 128):
     """
@@ -55,7 +55,7 @@ def tokenize_ingredients(input_file="data.csv", output_file="tokenized_data.csv"
 
     if not long_ingredients.empty:
         long_dir = os.path.dirname(long_file)
-        if long_dir:  # Prevents os.makedirs("") issue
+        if long_dir:  
             os.makedirs(long_dir, exist_ok=True)  
         long_ingredients.to_csv(long_file, index=False, encoding="utf-8")
         log_message(f"🚨 Saved {len(long_ingredients)} long ingredient entries to '{long_file}'.")
