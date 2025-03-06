@@ -1,4 +1,4 @@
-from log_manager import  EXPERIMENT_ID
+from experiment import  EXPERIMENT_ID
 import os
 
 # 🚀 **CONFIGURATION**
@@ -20,7 +20,7 @@ CONFIG = {
     "loss_function": "SmoothL1Loss",
     "filtered_food_category": "Cheese", # Options in branded_food_category_count file or "no_filter"
     "nutrients_predicted": ["Protein", "Total Fat", "Sodium, Na", "Total Sugar", "Total Fiber"],
-    "sample_size": 10000,
+    "sample_size": 80000,
     "normalise": "none", # Options: "none", "Softmax"
     "hidden_layers": [ 512, 256, 128],
     "dropout_rate": 0.1,

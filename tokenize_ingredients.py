@@ -64,9 +64,9 @@ def tokenize_ingredients(input_file="data.csv", output_file="tokenized_data.csv"
 
     batches = [short_ingredients["ingredients"][i:i+BATCH_SIZE] for i in range(0, len(short_ingredients), BATCH_SIZE)]
 
-    log_message(f"🔄 Tokenizing in {len(batches)} batches using {min(4, cpu_count())} CPU cores...")
+    log_message(f"🔄 Tokenizing in {len(batches)} batches using {min(6, cpu_count())} CPU cores...")
 
-    with Pool(min(4, cpu_count())) as pool:
+    with Pool(min(6, cpu_count())) as pool:
         tokenized_batches = list(tqdm(pool.imap(tokenize_batch, batches), total=len(batches), desc="🔄 Tokenizing"))
 
     log_message("✅ Merging tokenized results...")

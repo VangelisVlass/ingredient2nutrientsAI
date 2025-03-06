@@ -33,30 +33,62 @@ activation_map = {
 
 
 # 🏗️ **MODEL DEFINITION**
+import torch
+import torch.nn as nn
+from transformers import DistilBertModel
+from config import CONFIG
+
+# Define activation function mappings
+activation_map = {
+    "gelu": nn.GELU(),
+    "swish": nn.SiLU(),
+    "relu": nn.ReLU(),
+    "tanh": nn.Tanh(),
+    "sigmoid": nn.Sigmoid(),
+}
+
 class ModifiedDistilBERT(nn.Module):
     def __init__(self, output_size=len(CONFIG["nutrients_predicted"])):
         super(ModifiedDistilBERT, self).__init__()
         self.distilbert = DistilBertModel.from_pretrained(CONFIG["model_used"])
 
-        # Load hidden layer configuration from CONFIG
+        # Retrieve hidden layer structure from config
         hidden_layers = CONFIG.get("hidden_layers", [])  
         activation_fn = CONFIG.get("activation_function", "gelu").lower() 
         activation_layer = activation_map.get(activation_fn, nn.GELU()) 
 
-        # Create dynamic feed-forward network
         layers = []
-        input_dim = 768 
+        input_dim = 768  # DistilBERT embedding size
 
+        # Build fully connected layers dynamically
         for hidden_dim in hidden_layers:
             layers.append(nn.Linear(input_dim, hidden_dim))
             layers.append(activation_layer)  
-            layers.append(nn.Dropout(CONFIG.get("dropout_rate", 0.1))) 
+            layers.append(nn.Dropout(CONFIG.get("dropout_rate", 0.1)))  
             input_dim = hidden_dim
 
+        # Final output layer
         layers.append(nn.Linear(input_dim, output_size))  
         self.feedforward = nn.Sequential(*layers)
 
-    def forward(self, input_ids, attention_mask):
+    def forward(self, input_ids, attention_mask, return_embedding=False):
+        """
+        Forward pass of the model.
+
+        Args:
+            input_ids (tensor): Tokenized input data.
+            attention_mask (tensor): Attention mask for padding.
+            return_embedding (bool): If True, returns hidden embeddings.
+
+        Returns:
+            If return_embedding=False: Returns `predictions`
+            If return_embedding=True: Returns (`predictions`, `hidden_representation`)
+        """
         outputs = self.distilbert(input_ids=input_ids, attention_mask=attention_mask)
         cls_output = outputs.last_hidden_state[:, 0, :]  # Extract [CLS] token representation
-        return self.feedforward(cls_output)
+
+        if return_embedding:
+            return self.feedforward(cls_output), cls_output  # ✅ Correct structure
+
+        return self.feedforward(cls_output)  # ✅ Standard inference output
+
