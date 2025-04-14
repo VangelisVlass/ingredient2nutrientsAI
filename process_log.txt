@@ -2196,3 +2196,1022 @@
 [2025-02-23 19:19:37] [EXP-86af4f4b] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_86af4f4b_lr_0.00012.pth
 [2025-02-23 19:19:38] [EXP-86af4f4b] ✅ Full validation predictions saved to logs\validation_predictions_86af4f4b.csv
 [2025-02-23 19:19:52] [EXP-86af4f4b] 📊 Training results appended to logs\training_results.csv
+[2025-03-06 22:55:04] [EXP-d8abd927] 🔄 Preparing data...
+[2025-03-06 22:55:04] [EXP-d8abd927] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-06 22:55:04] [EXP-d8abd927] 🔹 Using sample size: 80000
+[2025-03-06 22:55:04] [EXP-d8abd927] 🔄 Loading branded food data...
+[2025-03-06 22:55:10] [EXP-d8abd927] 🔹 Filtering dataset by category: Cheese
+[2025-03-06 22:55:10] [EXP-d8abd927] 🔹 Sampled branded food entries: 80000
+[2025-03-06 22:55:10] [EXP-d8abd927] 🔄 Loading nutrient data...
+[2025-03-06 22:55:22] [EXP-d8abd927] 🔄 Filtering relevant nutrients...
+[2025-03-06 22:55:23] [EXP-d8abd927] 🔄 Aggregating nutrient data...
+[2025-03-06 22:55:25] [EXP-d8abd927] 🔄 Pivoting nutrient data...
+[2025-03-06 22:55:27] [EXP-d8abd927] 🔄 Merging datasets...
+[2025-03-06 22:55:27] [EXP-d8abd927] 🔹 Merged dataset size: 80000
+[2025-03-06 22:55:27] [EXP-d8abd927] 🔄 Renaming nutrient columns...
+[2025-03-06 22:55:27] [EXP-d8abd927] 🔄 Converting Sodium from mg to g...
+[2025-03-06 22:55:27] [EXP-d8abd927] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-06 22:55:27] [EXP-d8abd927] 🔍 Identifying and removing invalid nutrient values (>100g)...
+[2025-03-06 22:55:27] [EXP-d8abd927] ⚠️ Removed 117 entries due to invalid nutrient values.
+[2025-03-06 22:55:27] [EXP-d8abd927] 🔄 Calculating 'Others' column...
+[2025-03-06 22:55:27] [EXP-d8abd927] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-06 22:55:28] [EXP-d8abd927] ✅ Data processing complete! 🚀
+[2025-03-06 22:55:28] [EXP-d8abd927] 🔄 Loading data for tokenization...
+[2025-03-06 22:55:28] [EXP-d8abd927] 🔄 Filtering long ingredient lists...
+[2025-03-06 22:55:57] [EXP-d8abd927] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-06 22:55:57] [EXP-d8abd927] 🔹 Keeping 79690 rows for tokenization.
+[2025-03-06 22:55:57] [EXP-d8abd927] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-06 22:56:16] [EXP-d8abd927] ✅ Merging tokenized results...
+[2025-03-06 22:56:17] [EXP-d8abd927] ✅ Saved 32000 tokenized rows so far...
+[2025-03-06 22:56:20] [EXP-d8abd927] ✅ Saved 64000 tokenized rows so far...
+[2025-03-06 22:56:20] [EXP-d8abd927] ✅ Saving final tokenized dataset...
+[2025-03-06 22:56:23] [EXP-d8abd927] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-06 22:56:25] [EXP-d8abd927] 🚀 Using device: cuda
+[2025-03-06 22:56:25] [EXP-d8abd927] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-06 23:04:13] [EXP-d8abd927] ✅ Epoch 1/12 - Train Loss: 2.3276 | Val Loss: 1.4893
+[2025-03-06 23:04:14] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.7868, MSE: 21.4072, R²: 0.3135
+[2025-03-06 23:12:05] [EXP-d8abd927] ✅ Epoch 2/12 - Train Loss: 1.5654 | Val Loss: 1.4022
+[2025-03-06 23:12:05] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.6868, MSE: 19.4790, R²: 0.3558
+[2025-03-06 23:19:55] [EXP-d8abd927] ✅ Epoch 3/12 - Train Loss: 1.4102 | Val Loss: 1.2273
+[2025-03-06 23:19:55] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.4911, MSE: 18.7380, R²: 0.3864
+[2025-03-06 23:27:46] [EXP-d8abd927] ✅ Epoch 4/12 - Train Loss: 1.3379 | Val Loss: 1.2215
+[2025-03-06 23:27:46] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.4911, MSE: 19.0031, R²: 0.3933
+[2025-03-06 23:35:37] [EXP-d8abd927] ✅ Epoch 5/12 - Train Loss: 1.2913 | Val Loss: 1.2184
+[2025-03-06 23:35:37] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.4787, MSE: 19.0361, R²: 0.3945
+[2025-03-06 23:43:28] [EXP-d8abd927] ✅ Epoch 6/12 - Train Loss: 1.2558 | Val Loss: 1.1388
+[2025-03-06 23:43:28] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.3922, MSE: 17.6524, R²: 0.4139
+[2025-03-06 23:51:20] [EXP-d8abd927] ✅ Epoch 7/12 - Train Loss: 1.2242 | Val Loss: 1.0930
+[2025-03-06 23:51:21] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.3376, MSE: 17.3085, R²: 0.4258
+[2025-03-06 23:59:12] [EXP-d8abd927] ✅ Epoch 8/12 - Train Loss: 1.2068 | Val Loss: 1.0624
+[2025-03-06 23:59:12] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.3123, MSE: 17.3318, R²: 0.4283
+[2025-03-07 00:07:03] [EXP-d8abd927] ✅ Epoch 9/12 - Train Loss: 1.1949 | Val Loss: 1.0548
+[2025-03-07 00:07:03] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.3070, MSE: 17.3729, R²: 0.4325
+[2025-03-07 00:14:57] [EXP-d8abd927] ✅ Epoch 10/12 - Train Loss: 1.1788 | Val Loss: 1.1550
+[2025-03-07 00:14:57] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.4197, MSE: 18.4698, R²: 0.4195
+[2025-03-07 00:22:48] [EXP-d8abd927] ✅ Epoch 11/12 - Train Loss: 1.1635 | Val Loss: 1.0621
+[2025-03-07 00:22:48] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.3096, MSE: 17.3632, R²: 0.4317
+[2025-03-07 00:30:42] [EXP-d8abd927] ✅ Epoch 12/12 - Train Loss: 1.1537 | Val Loss: 1.0726
+[2025-03-07 00:30:42] [EXP-d8abd927] 📊 Validation Metrics - MAE: 1.3281, MSE: 17.5887, R²: 0.4304
+[2025-03-07 00:30:42] [EXP-d8abd927] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_d8abd927_lr_0.00012.pth
+[2025-03-07 00:30:43] [EXP-d8abd927] ✅ Full validation predictions saved to logs\validation_predictions_d8abd927.csv
+[2025-03-07 00:30:59] [EXP-d8abd927] 📊 Training results appended to logs\training_results.csv
+[2025-03-07 00:37:03] [EXP-6432fdef] 🔄 Preparing data...
+[2025-03-07 00:37:03] [EXP-6432fdef] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-07 00:37:03] [EXP-6432fdef] 🔹 Using sample size: 80000
+[2025-03-07 00:37:03] [EXP-6432fdef] 🔄 Loading branded food data...
+[2025-03-07 00:37:10] [EXP-6432fdef] 🔹 Filtering dataset by category: Cheese
+[2025-03-07 00:37:10] [EXP-6432fdef] 🔹 Sampled branded food entries: 80000
+[2025-03-07 00:37:10] [EXP-6432fdef] 🔄 Loading nutrient data...
+[2025-03-07 00:37:21] [EXP-6432fdef] 🔄 Filtering relevant nutrients...
+[2025-03-07 00:37:22] [EXP-6432fdef] 🔄 Aggregating nutrient data...
+[2025-03-07 00:37:25] [EXP-6432fdef] 🔄 Pivoting nutrient data...
+[2025-03-07 00:37:26] [EXP-6432fdef] 🔄 Merging datasets...
+[2025-03-07 00:37:26] [EXP-6432fdef] 🔹 Merged dataset size: 80000
+[2025-03-07 00:37:26] [EXP-6432fdef] 🔄 Renaming nutrient columns...
+[2025-03-07 00:37:26] [EXP-6432fdef] 🔄 Converting Sodium from mg to g...
+[2025-03-07 00:37:26] [EXP-6432fdef] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-07 00:37:26] [EXP-6432fdef] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-07 00:37:26] [EXP-6432fdef] ⚠️ Removed 174 entries due to invalid nutrient values.
+[2025-03-07 00:37:26] [EXP-6432fdef] 🔄 Calculating 'Others' column...
+[2025-03-07 00:37:26] [EXP-6432fdef] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-07 00:37:27] [EXP-6432fdef] ✅ Data processing complete! 🚀
+[2025-03-07 00:37:27] [EXP-6432fdef] 🔄 Loading data for tokenization...
+[2025-03-07 00:37:27] [EXP-6432fdef] 🔄 Filtering long ingredient lists...
+[2025-03-07 00:37:55] [EXP-6432fdef] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-07 00:37:55] [EXP-6432fdef] 🔹 Keeping 79633 rows for tokenization.
+[2025-03-07 00:37:55] [EXP-6432fdef] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-07 00:38:13] [EXP-6432fdef] ✅ Merging tokenized results...
+[2025-03-07 00:38:14] [EXP-6432fdef] ✅ Saved 32000 tokenized rows so far...
+[2025-03-07 00:38:16] [EXP-6432fdef] ✅ Saved 64000 tokenized rows so far...
+[2025-03-07 00:38:16] [EXP-6432fdef] ✅ Saving final tokenized dataset...
+[2025-03-07 00:38:19] [EXP-6432fdef] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-07 00:38:21] [EXP-6432fdef] 🚀 Using device: cuda
+[2025-03-07 00:38:21] [EXP-6432fdef] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-07 00:46:10] [EXP-6432fdef] ✅ Epoch 1/12 - Train Loss: 2.3759 | Val Loss: 1.4861
+[2025-03-07 00:46:10] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.7722, MSE: 19.9511, R²: 0.3271
+[2025-03-07 00:53:59] [EXP-6432fdef] ✅ Epoch 2/12 - Train Loss: 1.5597 | Val Loss: 1.3004
+[2025-03-07 00:53:59] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.5594, MSE: 19.1314, R²: 0.3754
+[2025-03-07 01:01:49] [EXP-6432fdef] ✅ Epoch 3/12 - Train Loss: 1.4055 | Val Loss: 1.2181
+[2025-03-07 01:01:49] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.4733, MSE: 18.2316, R²: 0.3978
+[2025-03-07 01:09:46] [EXP-6432fdef] ✅ Epoch 4/12 - Train Loss: 1.3378 | Val Loss: 1.1286
+[2025-03-07 01:09:46] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.3741, MSE: 17.2919, R²: 0.4165
+[2025-03-07 01:17:47] [EXP-6432fdef] ✅ Epoch 5/12 - Train Loss: 1.2838 | Val Loss: 1.1399
+[2025-03-07 01:17:47] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.4027, MSE: 16.4089, R²: 0.4224
+[2025-03-07 01:25:44] [EXP-6432fdef] ✅ Epoch 6/12 - Train Loss: 1.2539 | Val Loss: 1.0839
+[2025-03-07 01:25:44] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.3221, MSE: 16.4894, R²: 0.4306
+[2025-03-07 01:33:42] [EXP-6432fdef] ✅ Epoch 7/12 - Train Loss: 1.2229 | Val Loss: 1.1163
+[2025-03-07 01:33:42] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.3674, MSE: 17.5041, R²: 0.4182
+[2025-03-07 01:41:33] [EXP-6432fdef] ✅ Epoch 8/12 - Train Loss: 1.2139 | Val Loss: 1.0815
+[2025-03-07 01:41:33] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.3253, MSE: 15.9656, R²: 0.4329
+[2025-03-07 01:49:23] [EXP-6432fdef] ✅ Epoch 9/12 - Train Loss: 1.1829 | Val Loss: 1.0134
+[2025-03-07 01:49:23] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.2459, MSE: 16.3488, R²: 0.4377
+[2025-03-07 01:57:12] [EXP-6432fdef] ✅ Epoch 10/12 - Train Loss: 1.1757 | Val Loss: 1.1618
+[2025-03-07 01:57:12] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.4190, MSE: 18.1732, R²: 0.4208
+[2025-03-07 02:05:01] [EXP-6432fdef] ✅ Epoch 11/12 - Train Loss: 1.1688 | Val Loss: 1.0291
+[2025-03-07 02:05:01] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.2683, MSE: 16.6027, R²: 0.4441
+[2025-03-07 02:12:51] [EXP-6432fdef] ✅ Epoch 12/12 - Train Loss: 1.1583 | Val Loss: 1.0532
+[2025-03-07 02:12:51] [EXP-6432fdef] 📊 Validation Metrics - MAE: 1.2944, MSE: 17.0780, R²: 0.4415
+[2025-03-07 02:12:51] [EXP-6432fdef] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_6432fdef_lr_0.00012.pth
+[2025-03-07 02:12:52] [EXP-6432fdef] ✅ Full validation predictions saved to logs\validation_predictions_6432fdef.csv
+[2025-03-07 02:13:06] [EXP-6432fdef] 📊 Training results appended to logs\training_results.csv
+[2025-03-07 08:48:28] [EXP-4bdb95ed] 🔄 Preparing data...
+[2025-03-07 08:48:28] [EXP-4bdb95ed] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-07 08:48:28] [EXP-4bdb95ed] 🔹 Using sample size: 80000
+[2025-03-07 08:48:28] [EXP-4bdb95ed] 🔄 Loading branded food data...
+[2025-03-07 08:48:34] [EXP-4bdb95ed] 🔹 Filtering dataset by category: Cheese
+[2025-03-07 08:48:34] [EXP-4bdb95ed] 🔹 Sampled branded food entries: 80000
+[2025-03-07 08:48:34] [EXP-4bdb95ed] 🔄 Loading nutrient data...
+[2025-03-07 08:48:45] [EXP-4bdb95ed] 🔄 Filtering relevant nutrients...
+[2025-03-07 08:48:46] [EXP-4bdb95ed] 🔄 Aggregating nutrient data...
+[2025-03-07 08:48:49] [EXP-4bdb95ed] 🔄 Pivoting nutrient data...
+[2025-03-07 08:48:50] [EXP-4bdb95ed] 🔄 Merging datasets...
+[2025-03-07 08:48:51] [EXP-4bdb95ed] 🔹 Merged dataset size: 80000
+[2025-03-07 08:48:51] [EXP-4bdb95ed] 🔄 Renaming nutrient columns...
+[2025-03-07 08:48:51] [EXP-4bdb95ed] 🔄 Converting Sodium from mg to g...
+[2025-03-07 08:48:51] [EXP-4bdb95ed] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-07 08:48:51] [EXP-4bdb95ed] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-07 08:48:51] [EXP-4bdb95ed] ⚠️ Removed 174 entries due to invalid nutrient values.
+[2025-03-07 08:48:51] [EXP-4bdb95ed] 🔄 Calculating 'Others' column...
+[2025-03-07 08:48:51] [EXP-4bdb95ed] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-07 08:48:51] [EXP-4bdb95ed] ✅ Data processing complete! 🚀
+[2025-03-07 08:48:51] [EXP-4bdb95ed] 🔄 Loading data for tokenization...
+[2025-03-07 08:48:52] [EXP-4bdb95ed] 🔄 Filtering long ingredient lists...
+[2025-03-07 08:49:19] [EXP-4bdb95ed] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-07 08:49:19] [EXP-4bdb95ed] 🔹 Keeping 79633 rows for tokenization.
+[2025-03-07 08:49:19] [EXP-4bdb95ed] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-07 08:49:38] [EXP-4bdb95ed] ✅ Merging tokenized results...
+[2025-03-07 08:49:39] [EXP-4bdb95ed] ✅ Saved 32000 tokenized rows so far...
+[2025-03-07 08:49:40] [EXP-4bdb95ed] ✅ Saved 64000 tokenized rows so far...
+[2025-03-07 08:49:40] [EXP-4bdb95ed] ✅ Saving final tokenized dataset...
+[2025-03-07 08:49:43] [EXP-4bdb95ed] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-07 08:49:46] [EXP-4bdb95ed] 🚀 Using device: cuda
+[2025-03-07 08:49:46] [EXP-4bdb95ed] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-07 08:57:31] [EXP-4bdb95ed] ✅ Epoch 1/12 - Train Loss: 32.1719 | Val Loss: 19.3278
+[2025-03-07 08:57:32] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.9344, MSE: 19.3233, R²: 0.3296
+[2025-03-07 09:05:17] [EXP-4bdb95ed] ✅ Epoch 2/12 - Train Loss: 19.5804 | Val Loss: 17.4974
+[2025-03-07 09:05:17] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.7968, MSE: 17.4934, R²: 0.3941
+[2025-03-07 09:13:04] [EXP-4bdb95ed] ✅ Epoch 3/12 - Train Loss: 18.0313 | Val Loss: 16.9526
+[2025-03-07 09:13:04] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.7438, MSE: 16.9482, R²: 0.4096
+[2025-03-07 09:20:51] [EXP-4bdb95ed] ✅ Epoch 4/12 - Train Loss: 17.3731 | Val Loss: 16.6614
+[2025-03-07 09:20:51] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.7610, MSE: 16.6580, R²: 0.4187
+[2025-03-07 09:28:37] [EXP-4bdb95ed] ✅ Epoch 5/12 - Train Loss: 16.8420 | Val Loss: 17.1097
+[2025-03-07 09:28:37] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.6669, MSE: 17.1044, R²: 0.4061
+[2025-03-07 09:36:24] [EXP-4bdb95ed] ✅ Epoch 6/12 - Train Loss: 16.4922 | Val Loss: 16.3194
+[2025-03-07 09:36:24] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.5905, MSE: 16.3148, R²: 0.4292
+[2025-03-07 09:44:11] [EXP-4bdb95ed] ✅ Epoch 7/12 - Train Loss: 16.1054 | Val Loss: 16.0711
+[2025-03-07 09:44:11] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.7011, MSE: 16.0664, R²: 0.4380
+[2025-03-07 09:51:59] [EXP-4bdb95ed] ✅ Epoch 8/12 - Train Loss: 15.8208 | Val Loss: 16.3028
+[2025-03-07 09:51:59] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.7438, MSE: 16.2984, R²: 0.4354
+[2025-03-07 09:59:47] [EXP-4bdb95ed] ✅ Epoch 9/12 - Train Loss: 15.7561 | Val Loss: 15.9328
+[2025-03-07 09:59:47] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.5868, MSE: 15.9283, R²: 0.4418
+[2025-03-07 10:07:34] [EXP-4bdb95ed] ✅ Epoch 10/12 - Train Loss: 15.5377 | Val Loss: 15.7219
+[2025-03-07 10:07:34] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.5564, MSE: 15.7169, R²: 0.4507
+[2025-03-07 10:15:22] [EXP-4bdb95ed] ✅ Epoch 11/12 - Train Loss: 15.3678 | Val Loss: 16.0662
+[2025-03-07 10:15:22] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.5885, MSE: 16.0611, R²: 0.4295
+[2025-03-07 10:23:09] [EXP-4bdb95ed] ✅ Epoch 12/12 - Train Loss: 15.3566 | Val Loss: 15.9075
+[2025-03-07 10:23:09] [EXP-4bdb95ed] 📊 Validation Metrics - MAE: 1.5829, MSE: 15.9028, R²: 0.4464
+[2025-03-07 10:23:10] [EXP-4bdb95ed] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_4bdb95ed_lr_0.00012.pth
+[2025-03-07 10:23:11] [EXP-4bdb95ed] ✅ Full validation predictions saved to logs\validation_predictions_4bdb95ed.csv
+[2025-03-07 10:23:25] [EXP-4bdb95ed] 📊 Training results appended to logs\training_results.csv
+[2025-03-07 10:34:06] [EXP-1947c2aa] 🔄 Preparing data...
+[2025-03-07 10:34:06] [EXP-1947c2aa] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-07 10:34:06] [EXP-1947c2aa] 🔹 Using sample size: 80000
+[2025-03-07 10:34:06] [EXP-1947c2aa] 🔄 Loading branded food data...
+[2025-03-07 10:34:14] [EXP-1947c2aa] 🔹 Filtering dataset by category: Cheese
+[2025-03-07 10:34:14] [EXP-1947c2aa] 🔹 Sampled branded food entries: 80000
+[2025-03-07 10:34:14] [EXP-1947c2aa] 🔄 Loading nutrient data...
+[2025-03-07 10:34:27] [EXP-1947c2aa] 🔄 Filtering relevant nutrients...
+[2025-03-07 10:34:28] [EXP-1947c2aa] 🔄 Aggregating nutrient data...
+[2025-03-07 10:34:30] [EXP-1947c2aa] 🔄 Pivoting nutrient data...
+[2025-03-07 10:34:32] [EXP-1947c2aa] 🔄 Merging datasets...
+[2025-03-07 10:34:32] [EXP-1947c2aa] 🔹 Merged dataset size: 80000
+[2025-03-07 10:34:32] [EXP-1947c2aa] 🔄 Renaming nutrient columns...
+[2025-03-07 10:34:32] [EXP-1947c2aa] 🔄 Converting Sodium from mg to g...
+[2025-03-07 10:34:32] [EXP-1947c2aa] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-07 10:34:32] [EXP-1947c2aa] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-07 10:34:32] [EXP-1947c2aa] ⚠️ Removed 174 entries due to invalid nutrient values.
+[2025-03-07 10:34:32] [EXP-1947c2aa] 🔄 Calculating 'Others' column...
+[2025-03-07 10:34:32] [EXP-1947c2aa] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-07 10:34:32] [EXP-1947c2aa] ✅ Data processing complete! 🚀
+[2025-03-07 10:34:33] [EXP-1947c2aa] 🔄 Loading data for tokenization...
+[2025-03-07 10:34:33] [EXP-1947c2aa] 🔄 Filtering long ingredient lists...
+[2025-03-07 10:35:02] [EXP-1947c2aa] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-07 10:35:02] [EXP-1947c2aa] 🔹 Keeping 79633 rows for tokenization.
+[2025-03-07 10:35:02] [EXP-1947c2aa] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-07 10:35:20] [EXP-1947c2aa] ✅ Merging tokenized results...
+[2025-03-07 10:35:22] [EXP-1947c2aa] ✅ Saved 32000 tokenized rows so far...
+[2025-03-07 10:35:23] [EXP-1947c2aa] ✅ Saved 64000 tokenized rows so far...
+[2025-03-07 10:35:23] [EXP-1947c2aa] ✅ Saving final tokenized dataset...
+[2025-03-07 10:35:26] [EXP-1947c2aa] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-07 10:35:29] [EXP-1947c2aa] 🚀 Using device: cuda
+[2025-03-07 10:35:29] [EXP-1947c2aa] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-07 10:43:16] [EXP-1947c2aa] ✅ Epoch 1/12 - Train Loss: 32.7265 | Val Loss: 19.4238
+[2025-03-07 10:43:16] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.9668, MSE: 19.4155, R²: 0.3241
+[2025-03-07 10:51:04] [EXP-1947c2aa] ✅ Epoch 2/12 - Train Loss: 19.8618 | Val Loss: 17.9762
+[2025-03-07 10:51:04] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.8822, MSE: 17.9681, R²: 0.3894
+[2025-03-07 10:58:52] [EXP-1947c2aa] ✅ Epoch 3/12 - Train Loss: 18.3984 | Val Loss: 17.2442
+[2025-03-07 10:58:52] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.8208, MSE: 17.2358, R²: 0.3963
+[2025-03-07 11:06:40] [EXP-1947c2aa] ✅ Epoch 4/12 - Train Loss: 17.5013 | Val Loss: 17.0145
+[2025-03-07 11:06:40] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.7700, MSE: 17.0050, R²: 0.4100
+[2025-03-07 11:14:29] [EXP-1947c2aa] ✅ Epoch 5/12 - Train Loss: 17.3471 | Val Loss: 17.5690
+[2025-03-07 11:14:29] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.6720, MSE: 17.5597, R²: 0.4035
+[2025-03-07 11:22:17] [EXP-1947c2aa] ✅ Epoch 6/12 - Train Loss: 16.5791 | Val Loss: 16.2931
+[2025-03-07 11:22:17] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.5921, MSE: 16.2843, R²: 0.4216
+[2025-03-07 11:30:06] [EXP-1947c2aa] ✅ Epoch 7/12 - Train Loss: 16.4308 | Val Loss: 16.2203
+[2025-03-07 11:30:06] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.6263, MSE: 16.2109, R²: 0.4324
+[2025-03-07 11:37:54] [EXP-1947c2aa] ✅ Epoch 8/12 - Train Loss: 15.9514 | Val Loss: 16.1077
+[2025-03-07 11:37:54] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.5347, MSE: 16.0976, R²: 0.4349
+[2025-03-07 11:45:42] [EXP-1947c2aa] ✅ Epoch 9/12 - Train Loss: 15.8975 | Val Loss: 16.1864
+[2025-03-07 11:45:43] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.7118, MSE: 16.1782, R²: 0.4362
+[2025-03-07 11:53:31] [EXP-1947c2aa] ✅ Epoch 10/12 - Train Loss: 15.7955 | Val Loss: 16.4990
+[2025-03-07 11:53:31] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.7381, MSE: 16.4907, R²: 0.4270
+[2025-03-07 12:01:19] [EXP-1947c2aa] ✅ Epoch 11/12 - Train Loss: 15.6654 | Val Loss: 17.1740
+[2025-03-07 12:01:19] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.6975, MSE: 17.1651, R²: 0.3920
+[2025-03-07 12:09:08] [EXP-1947c2aa] ✅ Epoch 12/12 - Train Loss: 15.6102 | Val Loss: 17.3949
+[2025-03-07 12:09:08] [EXP-1947c2aa] 📊 Validation Metrics - MAE: 1.6724, MSE: 17.3855, R²: 0.3953
+[2025-03-07 12:09:08] [EXP-1947c2aa] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_1947c2aa_lr_0.00012.pth
+[2025-03-07 12:09:09] [EXP-1947c2aa] ✅ Full validation predictions saved to logs\validation_predictions_1947c2aa.csv
+[2025-03-07 12:09:23] [EXP-1947c2aa] 📊 Training results appended to logs\training_results.csv
+[2025-03-07 12:19:19] [EXP-34c16ae9] 🔄 Preparing data...
+[2025-03-07 12:19:19] [EXP-34c16ae9] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-07 12:19:19] [EXP-34c16ae9] 🔹 Using sample size: 80000
+[2025-03-07 12:19:19] [EXP-34c16ae9] 🔄 Loading branded food data...
+[2025-03-07 12:19:26] [EXP-34c16ae9] 🔹 Filtering dataset by category: Cheese
+[2025-03-07 12:19:26] [EXP-34c16ae9] 🔹 Sampled branded food entries: 80000
+[2025-03-07 12:19:26] [EXP-34c16ae9] 🔄 Loading nutrient data...
+[2025-03-07 12:19:38] [EXP-34c16ae9] 🔄 Filtering relevant nutrients...
+[2025-03-07 12:19:39] [EXP-34c16ae9] 🔄 Aggregating nutrient data...
+[2025-03-07 12:19:42] [EXP-34c16ae9] 🔄 Pivoting nutrient data...
+[2025-03-07 12:19:43] [EXP-34c16ae9] 🔄 Merging datasets...
+[2025-03-07 12:19:43] [EXP-34c16ae9] 🔹 Merged dataset size: 80000
+[2025-03-07 12:19:43] [EXP-34c16ae9] 🔄 Renaming nutrient columns...
+[2025-03-07 12:19:43] [EXP-34c16ae9] 🔄 Converting Sodium from mg to g...
+[2025-03-07 12:19:43] [EXP-34c16ae9] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-07 12:19:43] [EXP-34c16ae9] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-07 12:19:43] [EXP-34c16ae9] ⚠️ Removed 174 entries due to invalid nutrient values.
+[2025-03-07 12:19:43] [EXP-34c16ae9] 🔄 Calculating 'Others' column...
+[2025-03-07 12:19:43] [EXP-34c16ae9] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-07 12:19:44] [EXP-34c16ae9] ✅ Data processing complete! 🚀
+[2025-03-07 12:19:44] [EXP-34c16ae9] 🔄 Loading data for tokenization...
+[2025-03-07 12:19:44] [EXP-34c16ae9] 🔄 Filtering long ingredient lists...
+[2025-03-07 12:20:13] [EXP-34c16ae9] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-07 12:20:13] [EXP-34c16ae9] 🔹 Keeping 79633 rows for tokenization.
+[2025-03-07 12:20:13] [EXP-34c16ae9] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-07 12:20:32] [EXP-34c16ae9] ✅ Merging tokenized results...
+[2025-03-07 12:20:33] [EXP-34c16ae9] ✅ Saved 32000 tokenized rows so far...
+[2025-03-07 12:20:34] [EXP-34c16ae9] ✅ Saved 64000 tokenized rows so far...
+[2025-03-07 12:20:34] [EXP-34c16ae9] ✅ Saving final tokenized dataset...
+[2025-03-07 12:20:37] [EXP-34c16ae9] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-07 12:20:40] [EXP-34c16ae9] 🚀 Using device: cuda
+[2025-03-07 12:20:40] [EXP-34c16ae9] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-07 12:28:29] [EXP-34c16ae9] ✅ Epoch 1/12 - Train Loss: 31.2206 | Val Loss: 19.4473
+[2025-03-07 12:28:29] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.8993, MSE: 19.4417, R²: 0.3636
+[2025-03-07 12:36:17] [EXP-34c16ae9] ✅ Epoch 2/12 - Train Loss: 19.2714 | Val Loss: 17.7669
+[2025-03-07 12:36:17] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.8359, MSE: 17.7601, R²: 0.4077
+[2025-03-07 12:44:05] [EXP-34c16ae9] ✅ Epoch 3/12 - Train Loss: 17.9679 | Val Loss: 17.6090
+[2025-03-07 12:44:05] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.8712, MSE: 17.6036, R²: 0.4073
+[2025-03-07 12:51:54] [EXP-34c16ae9] ✅ Epoch 4/12 - Train Loss: 17.1958 | Val Loss: 17.6989
+[2025-03-07 12:51:54] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.6492, MSE: 17.6916, R²: 0.4117
+[2025-03-07 12:59:42] [EXP-34c16ae9] ✅ Epoch 5/12 - Train Loss: 16.7547 | Val Loss: 17.3205
+[2025-03-07 12:59:42] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.6071, MSE: 17.3138, R²: 0.4249
+[2025-03-07 13:07:30] [EXP-34c16ae9] ✅ Epoch 6/12 - Train Loss: 16.3968 | Val Loss: 17.1298
+[2025-03-07 13:07:30] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.5857, MSE: 17.1237, R²: 0.4241
+[2025-03-07 13:15:18] [EXP-34c16ae9] ✅ Epoch 7/12 - Train Loss: 16.0269 | Val Loss: 16.4694
+[2025-03-07 13:15:18] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.7138, MSE: 16.4638, R²: 0.4398
+[2025-03-07 13:23:06] [EXP-34c16ae9] ✅ Epoch 8/12 - Train Loss: 15.8832 | Val Loss: 16.0160
+[2025-03-07 13:23:06] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.5543, MSE: 16.0100, R²: 0.4446
+[2025-03-07 13:30:55] [EXP-34c16ae9] ✅ Epoch 9/12 - Train Loss: 15.6917 | Val Loss: 16.3154
+[2025-03-07 13:30:55] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.5847, MSE: 16.3095, R²: 0.4386
+[2025-03-07 13:38:43] [EXP-34c16ae9] ✅ Epoch 10/12 - Train Loss: 15.4381 | Val Loss: 16.0680
+[2025-03-07 13:38:43] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.6181, MSE: 16.0631, R²: 0.4460
+[2025-03-07 13:46:31] [EXP-34c16ae9] ✅ Epoch 11/12 - Train Loss: 15.3143 | Val Loss: 16.1654
+[2025-03-07 13:46:31] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.6835, MSE: 16.1602, R²: 0.4439
+[2025-03-07 13:54:20] [EXP-34c16ae9] ✅ Epoch 12/12 - Train Loss: 15.2273 | Val Loss: 15.8531
+[2025-03-07 13:54:20] [EXP-34c16ae9] 📊 Validation Metrics - MAE: 1.5225, MSE: 15.8469, R²: 0.4523
+[2025-03-07 13:54:20] [EXP-34c16ae9] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_34c16ae9_lr_0.00012.pth
+[2025-03-07 13:54:21] [EXP-34c16ae9] ✅ Full validation predictions saved to logs\validation_predictions_34c16ae9.csv
+[2025-03-07 13:54:35] [EXP-34c16ae9] 📊 Training results appended to logs\training_results.csv
+[2025-03-07 14:12:10] [EXP-3555bffe] 🔄 Preparing data...
+[2025-03-07 14:12:10] [EXP-3555bffe] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-07 14:12:10] [EXP-3555bffe] 🔹 Using sample size: 80000
+[2025-03-07 14:12:10] [EXP-3555bffe] 🔄 Loading branded food data...
+[2025-03-07 14:12:17] [EXP-3555bffe] 🔹 Filtering dataset by category: Cheese
+[2025-03-07 14:12:18] [EXP-3555bffe] 🔹 Sampled branded food entries: 80000
+[2025-03-07 14:12:18] [EXP-3555bffe] 🔄 Loading nutrient data...
+[2025-03-07 14:12:29] [EXP-3555bffe] 🔄 Filtering relevant nutrients...
+[2025-03-07 14:12:30] [EXP-3555bffe] 🔄 Aggregating nutrient data...
+[2025-03-07 14:12:32] [EXP-3555bffe] 🔄 Pivoting nutrient data...
+[2025-03-07 14:12:33] [EXP-3555bffe] 🔄 Merging datasets...
+[2025-03-07 14:12:34] [EXP-3555bffe] 🔹 Merged dataset size: 80000
+[2025-03-07 14:12:34] [EXP-3555bffe] 🔄 Renaming nutrient columns...
+[2025-03-07 14:12:34] [EXP-3555bffe] 🔄 Converting Sodium from mg to g...
+[2025-03-07 14:12:34] [EXP-3555bffe] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-07 14:12:34] [EXP-3555bffe] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-07 14:12:34] [EXP-3555bffe] ⚠️ Removed 174 entries due to invalid nutrient values.
+[2025-03-07 14:12:34] [EXP-3555bffe] 🔄 Calculating 'Others' column...
+[2025-03-07 14:12:34] [EXP-3555bffe] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-07 14:12:34] [EXP-3555bffe] ✅ Data processing complete! 🚀
+[2025-03-07 14:12:34] [EXP-3555bffe] 🔄 Loading data for tokenization...
+[2025-03-07 14:12:35] [EXP-3555bffe] 🔄 Filtering long ingredient lists...
+[2025-03-07 14:13:03] [EXP-3555bffe] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-07 14:13:03] [EXP-3555bffe] 🔹 Keeping 79633 rows for tokenization.
+[2025-03-07 14:13:03] [EXP-3555bffe] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-07 14:13:21] [EXP-3555bffe] ✅ Merging tokenized results...
+[2025-03-07 14:13:22] [EXP-3555bffe] ✅ Saved 32000 tokenized rows so far...
+[2025-03-07 14:13:24] [EXP-3555bffe] ✅ Saved 64000 tokenized rows so far...
+[2025-03-07 14:13:24] [EXP-3555bffe] ✅ Saving final tokenized dataset...
+[2025-03-07 14:13:27] [EXP-3555bffe] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-07 14:13:29] [EXP-3555bffe] 🚀 Using device: cuda
+[2025-03-07 14:13:29] [EXP-3555bffe] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-07 14:21:17] [EXP-3555bffe] ✅ Epoch 1/12 - Train Loss: 2.3322 | Val Loss: 1.4434
+[2025-03-07 14:21:17] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.7418, MSE: 18.7386, R²: 0.3199
+[2025-03-07 14:29:07] [EXP-3555bffe] ✅ Epoch 2/12 - Train Loss: 1.5578 | Val Loss: 1.2372
+[2025-03-07 14:29:07] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.5063, MSE: 17.5405, R²: 0.4115
+[2025-03-07 14:36:56] [EXP-3555bffe] ✅ Epoch 3/12 - Train Loss: 1.4071 | Val Loss: 1.2353
+[2025-03-07 14:36:56] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.4968, MSE: 17.5993, R²: 0.4200
+[2025-03-07 14:44:46] [EXP-3555bffe] ✅ Epoch 4/12 - Train Loss: 1.3358 | Val Loss: 1.1561
+[2025-03-07 14:44:46] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.4206, MSE: 16.8931, R²: 0.4249
+[2025-03-07 14:52:36] [EXP-3555bffe] ✅ Epoch 5/12 - Train Loss: 1.2920 | Val Loss: 1.0887
+[2025-03-07 14:52:36] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.3378, MSE: 15.1385, R²: 0.4492
+[2025-03-07 15:00:25] [EXP-3555bffe] ✅ Epoch 6/12 - Train Loss: 1.2575 | Val Loss: 1.0379
+[2025-03-07 15:00:25] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.2747, MSE: 15.5000, R²: 0.4417
+[2025-03-07 15:08:15] [EXP-3555bffe] ✅ Epoch 7/12 - Train Loss: 1.2317 | Val Loss: 1.0231
+[2025-03-07 15:08:15] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.2618, MSE: 15.6654, R²: 0.4545
+[2025-03-07 15:16:04] [EXP-3555bffe] ✅ Epoch 8/12 - Train Loss: 1.2141 | Val Loss: 0.9924
+[2025-03-07 15:16:04] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.2154, MSE: 15.4584, R²: 0.4545
+[2025-03-07 15:23:53] [EXP-3555bffe] ✅ Epoch 9/12 - Train Loss: 1.1937 | Val Loss: 1.0209
+[2025-03-07 15:23:54] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.2580, MSE: 15.5574, R²: 0.4551
+[2025-03-07 15:31:43] [EXP-3555bffe] ✅ Epoch 10/12 - Train Loss: 1.1820 | Val Loss: 0.9959
+[2025-03-07 15:31:43] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.2314, MSE: 15.3363, R²: 0.4557
+[2025-03-07 15:39:32] [EXP-3555bffe] ✅ Epoch 11/12 - Train Loss: 1.1685 | Val Loss: 1.0039
+[2025-03-07 15:39:32] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.2571, MSE: 14.8924, R²: 0.4703
+[2025-03-07 15:47:22] [EXP-3555bffe] ✅ Epoch 12/12 - Train Loss: 1.1612 | Val Loss: 0.9537
+[2025-03-07 15:47:22] [EXP-3555bffe] 📊 Validation Metrics - MAE: 1.1777, MSE: 14.9658, R²: 0.4710
+[2025-03-07 15:47:22] [EXP-3555bffe] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_3555bffe_lr_0.00012.pth
+[2025-03-07 15:47:23] [EXP-3555bffe] ✅ Full validation predictions saved to logs\validation_predictions_3555bffe.csv
+[2025-03-07 15:47:36] [EXP-3555bffe] 📊 Training results appended to logs\training_results.csv
+[2025-03-07 17:52:26] [EXP-c1fc372c] 🔄 Preparing data...
+[2025-03-07 17:52:26] [EXP-c1fc372c] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-07 17:52:26] [EXP-c1fc372c] 🔹 Using sample size: 80000
+[2025-03-07 17:52:26] [EXP-c1fc372c] 🔄 Loading branded food data...
+[2025-03-07 17:52:32] [EXP-c1fc372c] 🔹 Filtering dataset by category: Cheese
+[2025-03-07 17:52:32] [EXP-c1fc372c] 🔹 Sampled branded food entries: 80000
+[2025-03-07 17:52:32] [EXP-c1fc372c] 🔄 Loading nutrient data...
+[2025-03-07 17:52:43] [EXP-c1fc372c] 🔄 Filtering relevant nutrients...
+[2025-03-07 17:52:44] [EXP-c1fc372c] 🔄 Aggregating nutrient data...
+[2025-03-07 17:52:47] [EXP-c1fc372c] 🔄 Pivoting nutrient data...
+[2025-03-07 17:52:48] [EXP-c1fc372c] 🔄 Merging datasets...
+[2025-03-07 17:52:48] [EXP-c1fc372c] 🔹 Merged dataset size: 80000
+[2025-03-07 17:52:48] [EXP-c1fc372c] 🔄 Renaming nutrient columns...
+[2025-03-07 17:52:48] [EXP-c1fc372c] 🔄 Converting Sodium from mg to g...
+[2025-03-07 17:52:48] [EXP-c1fc372c] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-07 17:52:48] [EXP-c1fc372c] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-07 17:52:48] [EXP-c1fc372c] ⚠️ Removed 174 entries due to invalid nutrient values.
+[2025-03-07 17:52:48] [EXP-c1fc372c] 🔄 Calculating 'Others' column...
+[2025-03-07 17:52:48] [EXP-c1fc372c] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-07 17:52:49] [EXP-c1fc372c] ✅ Data processing complete! 🚀
+[2025-03-07 17:52:49] [EXP-c1fc372c] 🔄 Loading data for tokenization...
+[2025-03-07 17:52:49] [EXP-c1fc372c] 🔄 Filtering long ingredient lists...
+[2025-03-07 17:53:16] [EXP-c1fc372c] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-07 17:53:16] [EXP-c1fc372c] 🔹 Keeping 79633 rows for tokenization.
+[2025-03-07 17:53:16] [EXP-c1fc372c] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-07 17:53:35] [EXP-c1fc372c] ✅ Merging tokenized results...
+[2025-03-07 17:53:36] [EXP-c1fc372c] ✅ Saved 32000 tokenized rows so far...
+[2025-03-07 17:53:37] [EXP-c1fc372c] ✅ Saved 64000 tokenized rows so far...
+[2025-03-07 17:53:37] [EXP-c1fc372c] ✅ Saving final tokenized dataset...
+[2025-03-07 17:53:40] [EXP-c1fc372c] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-07 17:53:42] [EXP-c1fc372c] 🚀 Using device: cuda
+[2025-03-07 17:53:42] [EXP-c1fc372c] 
+🚀 Training with learning rate: 1e-05
+
+[2025-03-07 18:01:31] [EXP-c1fc372c] ✅ Epoch 1/12 - Train Loss: 4.4627 | Val Loss: 2.0731
+[2025-03-07 18:01:31] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 2.3881, MSE: 26.3141, R²: 0.2161
+[2025-03-07 18:09:20] [EXP-c1fc372c] ✅ Epoch 2/12 - Train Loss: 2.2847 | Val Loss: 1.5890
+[2025-03-07 18:09:20] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.8904, MSE: 20.5856, R²: 0.2934
+[2025-03-07 18:17:09] [EXP-c1fc372c] ✅ Epoch 3/12 - Train Loss: 1.8771 | Val Loss: 1.3767
+[2025-03-07 18:17:09] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.6645, MSE: 19.0029, R²: 0.3411
+[2025-03-07 18:24:58] [EXP-c1fc372c] ✅ Epoch 4/12 - Train Loss: 1.7189 | Val Loss: 1.2857
+[2025-03-07 18:24:58] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.5574, MSE: 17.7614, R²: 0.3771
+[2025-03-07 18:32:47] [EXP-c1fc372c] ✅ Epoch 5/12 - Train Loss: 1.6155 | Val Loss: 1.2123
+[2025-03-07 18:32:47] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.4827, MSE: 17.1430, R²: 0.4000
+[2025-03-07 18:40:36] [EXP-c1fc372c] ✅ Epoch 6/12 - Train Loss: 1.5404 | Val Loss: 1.1783
+[2025-03-07 18:40:36] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.4384, MSE: 16.7079, R²: 0.4166
+[2025-03-07 18:48:25] [EXP-c1fc372c] ✅ Epoch 7/12 - Train Loss: 1.4838 | Val Loss: 1.1382
+[2025-03-07 18:48:25] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.3975, MSE: 16.5996, R²: 0.4270
+[2025-03-07 18:56:14] [EXP-c1fc372c] ✅ Epoch 8/12 - Train Loss: 1.4314 | Val Loss: 1.0989
+[2025-03-07 18:56:14] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.3438, MSE: 16.5162, R²: 0.4414
+[2025-03-07 19:04:02] [EXP-c1fc372c] ✅ Epoch 9/12 - Train Loss: 1.3895 | Val Loss: 1.0816
+[2025-03-07 19:04:02] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.3237, MSE: 16.3517, R²: 0.4470
+[2025-03-07 19:11:51] [EXP-c1fc372c] ✅ Epoch 10/12 - Train Loss: 1.3542 | Val Loss: 1.0691
+[2025-03-07 19:11:51] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.3086, MSE: 16.1329, R²: 0.4527
+[2025-03-07 19:19:40] [EXP-c1fc372c] ✅ Epoch 11/12 - Train Loss: 1.3257 | Val Loss: 1.0517
+[2025-03-07 19:19:40] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2903, MSE: 15.9498, R²: 0.4608
+[2025-03-07 19:27:28] [EXP-c1fc372c] ✅ Epoch 12/12 - Train Loss: 1.3009 | Val Loss: 1.0344
+[2025-03-07 19:27:29] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2768, MSE: 15.9826, R²: 0.4674
+[2025-03-07 19:27:29] [EXP-c1fc372c] ✅ Best model for LR 1e-05 saved to logs/best_model_exp_c1fc372c_lr_1e-05.pth
+[2025-03-07 19:27:29] [EXP-c1fc372c] 
+🚀 Training with learning rate: 2e-05
+
+[2025-03-07 19:35:19] [EXP-c1fc372c] ✅ Epoch 1/12 - Train Loss: 3.6010 | Val Loss: 1.8466
+[2025-03-07 19:35:19] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 2.1433, MSE: 23.8212, R²: 0.2438
+[2025-03-07 19:43:08] [EXP-c1fc372c] ✅ Epoch 2/12 - Train Loss: 1.8841 | Val Loss: 1.3873
+[2025-03-07 19:43:08] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.6652, MSE: 18.7939, R²: 0.3419
+[2025-03-07 19:50:57] [EXP-c1fc372c] ✅ Epoch 3/12 - Train Loss: 1.6372 | Val Loss: 1.2663
+[2025-03-07 19:50:57] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.5364, MSE: 17.4890, R²: 0.3868
+[2025-03-07 19:58:46] [EXP-c1fc372c] ✅ Epoch 4/12 - Train Loss: 1.5142 | Val Loss: 1.1823
+[2025-03-07 19:58:46] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.4349, MSE: 17.2061, R²: 0.4099
+[2025-03-07 20:06:35] [EXP-c1fc372c] ✅ Epoch 5/12 - Train Loss: 1.4200 | Val Loss: 1.1512
+[2025-03-07 20:06:35] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.4099, MSE: 16.3055, R²: 0.4287
+[2025-03-07 20:14:24] [EXP-c1fc372c] ✅ Epoch 6/12 - Train Loss: 1.3562 | Val Loss: 1.0862
+[2025-03-07 20:14:24] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.3384, MSE: 16.1407, R²: 0.4402
+[2025-03-07 20:22:14] [EXP-c1fc372c] ✅ Epoch 7/12 - Train Loss: 1.3095 | Val Loss: 1.0571
+[2025-03-07 20:22:14] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.3055, MSE: 16.1059, R²: 0.4404
+[2025-03-07 20:30:03] [EXP-c1fc372c] ✅ Epoch 8/12 - Train Loss: 1.2739 | Val Loss: 1.0272
+[2025-03-07 20:30:03] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2621, MSE: 15.7223, R²: 0.4446
+[2025-03-07 20:37:53] [EXP-c1fc372c] ✅ Epoch 9/12 - Train Loss: 1.2418 | Val Loss: 1.0217
+[2025-03-07 20:37:53] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2640, MSE: 15.4392, R²: 0.4534
+[2025-03-07 20:45:42] [EXP-c1fc372c] ✅ Epoch 10/12 - Train Loss: 1.2159 | Val Loss: 1.0104
+[2025-03-07 20:45:42] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2544, MSE: 15.7907, R²: 0.4483
+[2025-03-07 20:53:33] [EXP-c1fc372c] ✅ Epoch 11/12 - Train Loss: 1.1971 | Val Loss: 0.9823
+[2025-03-07 20:53:33] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2219, MSE: 15.2901, R²: 0.4566
+[2025-03-07 21:01:24] [EXP-c1fc372c] ✅ Epoch 12/12 - Train Loss: 1.1797 | Val Loss: 0.9958
+[2025-03-07 21:01:24] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2377, MSE: 15.0191, R²: 0.4601
+[2025-03-07 21:01:24] [EXP-c1fc372c] ✅ Best model for LR 2e-05 saved to logs/best_model_exp_c1fc372c_lr_2e-05.pth
+[2025-03-07 21:01:25] [EXP-c1fc372c] 
+🚀 Training with learning rate: 0.0001
+
+[2025-03-07 21:09:17] [EXP-c1fc372c] ✅ Epoch 1/12 - Train Loss: 2.4199 | Val Loss: 1.4206
+[2025-03-07 21:09:17] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.7038, MSE: 19.0864, R²: 0.3342
+[2025-03-07 21:17:09] [EXP-c1fc372c] ✅ Epoch 2/12 - Train Loss: 1.5492 | Val Loss: 1.2978
+[2025-03-07 21:17:09] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.5665, MSE: 16.8921, R²: 0.4100
+[2025-03-07 21:25:01] [EXP-c1fc372c] ✅ Epoch 3/12 - Train Loss: 1.3902 | Val Loss: 1.2059
+[2025-03-07 21:25:01] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.4682, MSE: 17.4199, R²: 0.4206
+[2025-03-07 21:32:52] [EXP-c1fc372c] ✅ Epoch 4/12 - Train Loss: 1.3147 | Val Loss: 1.1315
+[2025-03-07 21:32:52] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.3797, MSE: 16.9375, R²: 0.4320
+[2025-03-07 21:40:44] [EXP-c1fc372c] ✅ Epoch 5/12 - Train Loss: 1.2653 | Val Loss: 1.1019
+[2025-03-07 21:40:44] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.3548, MSE: 16.9229, R²: 0.4352
+[2025-03-07 21:48:36] [EXP-c1fc372c] ✅ Epoch 6/12 - Train Loss: 1.2276 | Val Loss: 1.0335
+[2025-03-07 21:48:36] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2817, MSE: 15.5153, R²: 0.4501
+[2025-03-07 21:56:28] [EXP-c1fc372c] ✅ Epoch 7/12 - Train Loss: 1.2025 | Val Loss: 1.0423
+[2025-03-07 21:56:28] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2859, MSE: 15.9106, R²: 0.4452
+[2025-03-07 22:04:20] [EXP-c1fc372c] ✅ Epoch 8/12 - Train Loss: 1.1821 | Val Loss: 1.0745
+[2025-03-07 22:04:20] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.3213, MSE: 16.5163, R²: 0.4437
+[2025-03-07 22:12:12] [EXP-c1fc372c] ✅ Epoch 9/12 - Train Loss: 1.1646 | Val Loss: 0.9945
+[2025-03-07 22:12:12] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2317, MSE: 15.6353, R²: 0.4571
+[2025-03-07 22:20:04] [EXP-c1fc372c] ✅ Epoch 10/12 - Train Loss: 1.1538 | Val Loss: 1.0081
+[2025-03-07 22:20:04] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2439, MSE: 15.6873, R²: 0.4547
+[2025-03-07 22:27:56] [EXP-c1fc372c] ✅ Epoch 11/12 - Train Loss: 1.1390 | Val Loss: 1.0024
+[2025-03-07 22:27:56] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2339, MSE: 15.9229, R²: 0.4532
+[2025-03-07 22:35:48] [EXP-c1fc372c] ✅ Epoch 12/12 - Train Loss: 1.1264 | Val Loss: 0.9843
+[2025-03-07 22:35:48] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 1.2228, MSE: 15.8906, R²: 0.4615
+[2025-03-07 22:35:48] [EXP-c1fc372c] 
+🚀 Training with learning rate: 0.0005
+
+[2025-03-07 22:43:40] [EXP-c1fc372c] ✅ Epoch 1/12 - Train Loss: 3.3556 | Val Loss: 3.1754
+[2025-03-07 22:43:40] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5057, MSE: 47.3577, R²: -0.0735
+[2025-03-07 22:51:31] [EXP-c1fc372c] ✅ Epoch 2/12 - Train Loss: 3.2507 | Val Loss: 3.2228
+[2025-03-07 22:51:31] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5652, MSE: 51.2388, R²: -0.1072
+[2025-03-07 22:59:22] [EXP-c1fc372c] ✅ Epoch 3/12 - Train Loss: 3.2515 | Val Loss: 3.1796
+[2025-03-07 22:59:22] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5088, MSE: 48.4207, R²: -0.0846
+[2025-03-07 23:07:14] [EXP-c1fc372c] ✅ Epoch 4/12 - Train Loss: 3.2414 | Val Loss: 3.3466
+[2025-03-07 23:07:14] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.6802, MSE: 42.8023, R²: -0.0270
+[2025-03-07 23:15:05] [EXP-c1fc372c] ✅ Epoch 5/12 - Train Loss: 3.2457 | Val Loss: 3.2362
+[2025-03-07 23:15:05] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5580, MSE: 52.0134, R²: -0.1221
+[2025-03-07 23:22:55] [EXP-c1fc372c] ✅ Epoch 6/12 - Train Loss: 3.2476 | Val Loss: 3.2292
+[2025-03-07 23:22:55] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5495, MSE: 52.0266, R²: -0.1226
+[2025-03-07 23:30:45] [EXP-c1fc372c] ✅ Epoch 7/12 - Train Loss: 3.2393 | Val Loss: 3.2152
+[2025-03-07 23:30:45] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5604, MSE: 43.7646, R²: -0.0487
+[2025-03-07 23:38:35] [EXP-c1fc372c] ✅ Epoch 8/12 - Train Loss: 3.2410 | Val Loss: 3.3048
+[2025-03-07 23:38:35] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.6341, MSE: 55.4099, R²: -0.1660
+[2025-03-07 23:46:25] [EXP-c1fc372c] ✅ Epoch 9/12 - Train Loss: 3.2654 | Val Loss: 3.1715
+[2025-03-07 23:46:25] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5011, MSE: 46.6073, R²: -0.0863
+[2025-03-07 23:54:15] [EXP-c1fc372c] ✅ Epoch 10/12 - Train Loss: 3.2401 | Val Loss: 3.1748
+[2025-03-07 23:54:15] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5122, MSE: 48.0382, R²: -0.0809
+[2025-03-08 00:02:05] [EXP-c1fc372c] ✅ Epoch 11/12 - Train Loss: 3.2355 | Val Loss: 3.2149
+[2025-03-08 00:02:05] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5465, MSE: 51.2602, R²: -0.1147
+[2025-03-08 00:09:54] [EXP-c1fc372c] ✅ Epoch 12/12 - Train Loss: 3.2515 | Val Loss: 3.1718
+[2025-03-08 00:09:54] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.4898, MSE: 46.1799, R²: -0.0643
+[2025-03-08 00:09:54] [EXP-c1fc372c] 
+🚀 Training with learning rate: 0.001
+
+[2025-03-08 00:17:43] [EXP-c1fc372c] ✅ Epoch 1/12 - Train Loss: 3.3493 | Val Loss: 3.1756
+[2025-03-08 00:17:44] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.4969, MSE: 45.4343, R²: -0.0564
+[2025-03-08 00:25:32] [EXP-c1fc372c] ✅ Epoch 2/12 - Train Loss: 3.3123 | Val Loss: 3.2155
+[2025-03-08 00:25:32] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5382, MSE: 50.6270, R²: -0.1136
+[2025-03-08 00:33:20] [EXP-c1fc372c] ✅ Epoch 3/12 - Train Loss: 3.2730 | Val Loss: 3.1848
+[2025-03-08 00:33:20] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5044, MSE: 49.3818, R²: -0.1068
+[2025-03-08 00:41:08] [EXP-c1fc372c] ✅ Epoch 4/12 - Train Loss: 3.2624 | Val Loss: 3.3337
+[2025-03-08 00:41:08] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.6708, MSE: 56.6212, R²: -0.1643
+[2025-03-08 00:48:56] [EXP-c1fc372c] ✅ Epoch 5/12 - Train Loss: 3.2607 | Val Loss: 3.1857
+[2025-03-08 00:48:56] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5316, MSE: 48.7805, R²: -0.1002
+[2025-03-08 00:56:44] [EXP-c1fc372c] ✅ Epoch 6/12 - Train Loss: 3.2652 | Val Loss: 3.1703
+[2025-03-08 00:56:44] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.4845, MSE: 47.1227, R²: -0.0762
+[2025-03-08 01:04:33] [EXP-c1fc372c] ✅ Epoch 7/12 - Train Loss: 3.2508 | Val Loss: 3.1964
+[2025-03-08 01:04:33] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5175, MSE: 49.3958, R²: -0.1304
+[2025-03-08 01:12:21] [EXP-c1fc372c] ✅ Epoch 8/12 - Train Loss: 3.2621 | Val Loss: 3.2023
+[2025-03-08 01:12:21] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5290, MSE: 50.1401, R²: -0.1390
+[2025-03-08 01:20:09] [EXP-c1fc372c] ✅ Epoch 9/12 - Train Loss: 3.2540 | Val Loss: 3.1902
+[2025-03-08 01:20:09] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.5063, MSE: 44.7881, R²: -0.0542
+[2025-03-08 01:27:56] [EXP-c1fc372c] ✅ Epoch 10/12 - Train Loss: 3.2423 | Val Loss: 3.8416
+[2025-03-08 01:27:56] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 4.1624, MSE: 71.0621, R²: -0.3103
+[2025-03-08 01:35:43] [EXP-c1fc372c] ✅ Epoch 11/12 - Train Loss: 3.1989 | Val Loss: 3.4995
+[2025-03-08 01:35:43] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.8013, MSE: 62.8116, R²: -0.2480
+[2025-03-08 01:43:30] [EXP-c1fc372c] ✅ Epoch 12/12 - Train Loss: 3.1849 | Val Loss: 3.4033
+[2025-03-08 01:43:30] [EXP-c1fc372c] 📊 Validation Metrics - MAE: 3.7283, MSE: 59.3563, R²: -0.1987
+[2025-03-08 01:43:30] [EXP-c1fc372c] ✅ Full validation predictions saved to logs\validation_predictions_c1fc372c.csv
+[2025-03-08 01:43:44] [EXP-c1fc372c] 📊 Training results appended to logs\training_results.csv
+[2025-03-08 10:10:49] [EXP-82f08bde] 🔄 Preparing data...
+[2025-03-08 10:10:49] [EXP-82f08bde] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-08 10:10:49] [EXP-82f08bde] 🔹 Using sample size: 80000
+[2025-03-08 10:10:49] [EXP-82f08bde] 🔄 Loading branded food data...
+[2025-03-08 10:17:58] [EXP-dc335516] 🔄 Preparing data...
+[2025-03-08 10:17:58] [EXP-dc335516] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-08 10:17:58] [EXP-dc335516] 🔹 Using sample size: 80000
+[2025-03-08 10:17:58] [EXP-dc335516] 🔄 Loading branded food data...
+[2025-03-08 10:18:04] [EXP-dc335516] 🔹 Filtering dataset by category: Cheese
+[2025-03-08 10:18:04] [EXP-dc335516] 🔹 Sampled branded food entries: 80000
+[2025-03-08 10:18:04] [EXP-dc335516] 🔄 Loading nutrient data...
+[2025-03-08 10:18:16] [EXP-dc335516] 🔄 Filtering relevant nutrients...
+[2025-03-08 10:18:16] [EXP-dc335516] 🔄 Aggregating nutrient data...
+[2025-03-08 10:18:19] [EXP-dc335516] 🔄 Pivoting nutrient data...
+[2025-03-08 10:18:21] [EXP-dc335516] 🔄 Merging datasets...
+[2025-03-08 10:18:21] [EXP-dc335516] 🔹 Merged dataset size: 80000
+[2025-03-08 10:18:21] [EXP-dc335516] 🔄 Renaming nutrient columns...
+[2025-03-08 10:18:21] [EXP-dc335516] 🔄 Converting Sodium from mg to g...
+[2025-03-08 10:18:21] [EXP-dc335516] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-08 10:18:21] [EXP-dc335516] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-08 10:18:21] [EXP-dc335516] ⚠️ Removed 174 entries due to invalid nutrient values.
+[2025-03-08 10:18:21] [EXP-dc335516] 🔄 Calculating 'Others' column...
+[2025-03-08 10:18:21] [EXP-dc335516] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-08 10:18:22] [EXP-dc335516] ✅ Data processing complete! 🚀
+[2025-03-08 10:18:22] [EXP-dc335516] 🔄 Loading data for tokenization...
+[2025-03-08 10:18:22] [EXP-dc335516] 🔄 Filtering long ingredient lists...
+[2025-03-08 10:18:49] [EXP-dc335516] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-08 10:18:49] [EXP-dc335516] 🔹 Keeping 79633 rows for tokenization.
+[2025-03-08 10:18:49] [EXP-dc335516] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-08 10:19:09] [EXP-dc335516] ✅ Merging tokenized results...
+[2025-03-08 10:19:09] [EXP-dc335516] ✅ Saved 32000 tokenized rows so far...
+[2025-03-08 10:19:11] [EXP-dc335516] ✅ Saved 64000 tokenized rows so far...
+[2025-03-08 10:19:11] [EXP-dc335516] ✅ Saving final tokenized dataset...
+[2025-03-08 10:19:14] [EXP-dc335516] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-08 10:19:17] [EXP-dc335516] 🚀 Using device: cuda
+[2025-03-08 10:19:17] [EXP-dc335516] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-08 10:28:39] [EXP-dc335516] ✅ Epoch 1/12 - Train Loss: 2.9501 | Val Loss: 3.1474
+[2025-03-08 10:28:39] [EXP-dc335516] 📊 Validation Metrics - MAE: 3.4610, MSE: 45.9115, R²: -0.0762
+[2025-03-08 10:38:02] [EXP-dc335516] ✅ Epoch 2/12 - Train Loss: 3.2534 | Val Loss: 3.1483
+[2025-03-08 10:38:02] [EXP-dc335516] 📊 Validation Metrics - MAE: 3.4683, MSE: 45.6484, R²: -0.0611
+[2025-03-08 10:47:25] [EXP-dc335516] ✅ Epoch 3/12 - Train Loss: 3.2512 | Val Loss: 3.1491
+[2025-03-08 10:47:25] [EXP-dc335516] 📊 Validation Metrics - MAE: 3.4877, MSE: 47.9203, R²: -0.0784
+[2025-03-08 10:56:47] [EXP-dc335516] ✅ Epoch 4/12 - Train Loss: 3.2453 | Val Loss: 3.1812
+[2025-03-08 10:56:47] [EXP-dc335516] 📊 Validation Metrics - MAE: 3.4980, MSE: 50.5509, R²: -0.1122
+[2025-03-08 11:06:10] [EXP-dc335516] ✅ Epoch 5/12 - Train Loss: 3.2267 | Val Loss: 3.1951
+[2025-03-08 11:06:10] [EXP-dc335516] 📊 Validation Metrics - MAE: 3.5280, MSE: 51.1135, R²: -0.1184
+[2025-03-08 11:15:33] [EXP-dc335516] ✅ Epoch 6/12 - Train Loss: 3.2062 | Val Loss: 3.1781
+[2025-03-08 11:15:33] [EXP-dc335516] 📊 Validation Metrics - MAE: 3.4992, MSE: 50.0649, R²: -0.1235
+[2025-03-08 11:24:56] [EXP-dc335516] ✅ Epoch 7/12 - Train Loss: 3.1810 | Val Loss: 3.2772
+[2025-03-08 11:24:56] [EXP-dc335516] 📊 Validation Metrics - MAE: 3.6011, MSE: 55.0852, R²: -0.1578
+[2025-03-08 11:34:20] [EXP-dc335516] ✅ Epoch 8/12 - Train Loss: 3.1725 | Val Loss: 3.2821
+[2025-03-08 11:34:20] [EXP-dc335516] 📊 Validation Metrics - MAE: 3.5975, MSE: 55.2876, R²: -0.1596
+[2025-03-08 11:43:43] [EXP-dc335516] ✅ Epoch 9/12 - Train Loss: 3.1467 | Val Loss: 3.3566
+[2025-03-08 11:43:43] [EXP-dc335516] 📊 Validation Metrics - MAE: 3.6688, MSE: 58.2832, R²: -0.1935
+[2025-03-08 11:53:22] [EXP-a9e0b6b4] 🔄 Preparing data...
+[2025-03-08 11:53:22] [EXP-a9e0b6b4] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-08 11:53:22] [EXP-a9e0b6b4] 🔹 Using sample size: 80000
+[2025-03-08 11:53:22] [EXP-a9e0b6b4] 🔄 Loading branded food data...
+[2025-03-08 11:53:28] [EXP-a9e0b6b4] 🔹 Filtering dataset by category: Cheese
+[2025-03-08 11:53:28] [EXP-a9e0b6b4] 🔹 Sampled branded food entries: 80000
+[2025-03-08 11:53:28] [EXP-a9e0b6b4] 🔄 Loading nutrient data...
+[2025-03-08 11:53:40] [EXP-a9e0b6b4] 🔄 Filtering relevant nutrients...
+[2025-03-08 11:53:41] [EXP-a9e0b6b4] 🔄 Aggregating nutrient data...
+[2025-03-08 11:53:44] [EXP-a9e0b6b4] 🔄 Pivoting nutrient data...
+[2025-03-08 11:53:45] [EXP-a9e0b6b4] 🔄 Merging datasets...
+[2025-03-08 11:53:45] [EXP-a9e0b6b4] 🔹 Merged dataset size: 80000
+[2025-03-08 11:53:45] [EXP-a9e0b6b4] 🔄 Renaming nutrient columns...
+[2025-03-08 11:53:45] [EXP-a9e0b6b4] 🔄 Converting Sodium from mg to g...
+[2025-03-08 11:53:45] [EXP-a9e0b6b4] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-08 11:53:45] [EXP-a9e0b6b4] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-08 11:53:45] [EXP-a9e0b6b4] ⚠️ Removed 174 entries due to invalid nutrient values.
+[2025-03-08 11:53:45] [EXP-a9e0b6b4] 🔄 Calculating 'Others' column...
+[2025-03-08 11:53:45] [EXP-a9e0b6b4] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-08 11:53:46] [EXP-a9e0b6b4] ✅ Data processing complete! 🚀
+[2025-03-08 11:53:46] [EXP-a9e0b6b4] 🔄 Loading data for tokenization...
+[2025-03-08 11:53:46] [EXP-a9e0b6b4] 🔄 Filtering long ingredient lists...
+[2025-03-08 11:54:15] [EXP-a9e0b6b4] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-08 11:54:15] [EXP-a9e0b6b4] 🔹 Keeping 79633 rows for tokenization.
+[2025-03-08 11:54:16] [EXP-a9e0b6b4] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-08 11:54:35] [EXP-a9e0b6b4] ✅ Merging tokenized results...
+[2025-03-08 11:54:35] [EXP-a9e0b6b4] ✅ Saved 32000 tokenized rows so far...
+[2025-03-08 11:54:38] [EXP-a9e0b6b4] ✅ Saved 64000 tokenized rows so far...
+[2025-03-08 11:54:38] [EXP-a9e0b6b4] ✅ Saving final tokenized dataset...
+[2025-03-08 11:54:41] [EXP-a9e0b6b4] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-08 11:54:43] [EXP-a9e0b6b4] 🚀 Using device: cuda
+[2025-03-08 11:54:43] [EXP-a9e0b6b4] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-08 12:03:15] [EXP-a9e0b6b4] ✅ Epoch 1/12 - Train Loss: 2.1989 | Val Loss: 1.5439
+[2025-03-08 12:03:15] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.8354, MSE: 21.7328, R²: 0.3012
+[2025-03-08 12:11:44] [EXP-a9e0b6b4] ✅ Epoch 2/12 - Train Loss: 1.5669 | Val Loss: 1.3500
+[2025-03-08 12:11:44] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.6055, MSE: 19.3185, R²: 0.3521
+[2025-03-08 12:20:12] [EXP-a9e0b6b4] ✅ Epoch 3/12 - Train Loss: 1.4437 | Val Loss: 1.2509
+[2025-03-08 12:20:12] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.5021, MSE: 18.0722, R²: 0.3757
+[2025-03-08 12:28:39] [EXP-a9e0b6b4] ✅ Epoch 4/12 - Train Loss: 1.3673 | Val Loss: 1.2105
+[2025-03-08 12:28:39] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.4767, MSE: 17.1661, R²: 0.3941
+[2025-03-08 12:37:07] [EXP-a9e0b6b4] ✅ Epoch 5/12 - Train Loss: 1.3214 | Val Loss: 1.1565
+[2025-03-08 12:37:07] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.4220, MSE: 16.9487, R²: 0.3993
+[2025-03-08 12:45:34] [EXP-a9e0b6b4] ✅ Epoch 6/12 - Train Loss: 1.2976 | Val Loss: 1.1797
+[2025-03-08 12:45:34] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.4251, MSE: 16.8346, R²: 0.4027
+[2025-03-08 12:54:01] [EXP-a9e0b6b4] ✅ Epoch 7/12 - Train Loss: 1.3139 | Val Loss: 1.1664
+[2025-03-08 12:54:01] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.4311, MSE: 17.3707, R²: 0.3948
+[2025-03-08 13:02:28] [EXP-a9e0b6b4] ✅ Epoch 8/12 - Train Loss: 1.2606 | Val Loss: 1.0991
+[2025-03-08 13:02:28] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.3447, MSE: 17.1710, R²: 0.4015
+[2025-03-08 13:10:55] [EXP-a9e0b6b4] ✅ Epoch 9/12 - Train Loss: 1.2355 | Val Loss: 1.1138
+[2025-03-08 13:10:55] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.3641, MSE: 17.0226, R²: 0.4079
+[2025-03-08 13:19:22] [EXP-a9e0b6b4] ✅ Epoch 10/12 - Train Loss: 1.2285 | Val Loss: 1.1161
+[2025-03-08 13:19:22] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.3657, MSE: 17.2536, R²: 0.4036
+[2025-03-08 13:27:49] [EXP-a9e0b6b4] ✅ Epoch 11/12 - Train Loss: 1.2176 | Val Loss: 1.0922
+[2025-03-08 13:27:49] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.3269, MSE: 16.8163, R²: 0.4106
+[2025-03-08 13:36:15] [EXP-a9e0b6b4] ✅ Epoch 12/12 - Train Loss: 1.2049 | Val Loss: 1.0806
+[2025-03-08 13:36:15] [EXP-a9e0b6b4] 📊 Validation Metrics - MAE: 1.3302, MSE: 16.9452, R²: 0.4120
+[2025-03-08 13:36:16] [EXP-a9e0b6b4] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_a9e0b6b4_lr_0.00012.pth
+[2025-03-08 13:36:17] [EXP-a9e0b6b4] ✅ Full validation predictions saved to logs\validation_predictions_a9e0b6b4.csv
+[2025-03-08 13:36:30] [EXP-a9e0b6b4] 📊 Training results appended to logs\training_results.csv
+[2025-03-08 16:07:50] [EXP-c2f522fe] 🔄 Preparing data...
+[2025-03-08 16:07:50] [EXP-c2f522fe] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-08 16:07:50] [EXP-c2f522fe] 🔹 Using sample size: 80000
+[2025-03-08 16:07:50] [EXP-c2f522fe] 🔄 Loading branded food data...
+[2025-03-08 16:07:57] [EXP-c2f522fe] 🔹 Filtering dataset by category: Cheese
+[2025-03-08 16:07:57] [EXP-c2f522fe] 🔹 Sampled branded food entries: 80000
+[2025-03-08 16:07:57] [EXP-c2f522fe] 🔄 Loading nutrient data...
+[2025-03-08 16:08:09] [EXP-c2f522fe] 🔄 Filtering relevant nutrients...
+[2025-03-08 16:08:09] [EXP-c2f522fe] 🔄 Aggregating nutrient data...
+[2025-03-08 16:08:12] [EXP-c2f522fe] 🔄 Pivoting nutrient data...
+[2025-03-08 16:08:13] [EXP-c2f522fe] 🔄 Merging datasets...
+[2025-03-08 16:08:13] [EXP-c2f522fe] 🔹 Merged dataset size: 80000
+[2025-03-08 16:08:13] [EXP-c2f522fe] 🔄 Renaming nutrient columns...
+[2025-03-08 16:08:13] [EXP-c2f522fe] 🔄 Converting Sodium from mg to g...
+[2025-03-08 16:08:13] [EXP-c2f522fe] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-08 16:08:13] [EXP-c2f522fe] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-08 16:08:13] [EXP-c2f522fe] ⚠️ Removed 174 entries due to invalid nutrient values.
+[2025-03-08 16:08:13] [EXP-c2f522fe] 🔄 Calculating 'Others' column...
+[2025-03-08 16:08:14] [EXP-c2f522fe] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-08 16:08:14] [EXP-c2f522fe] ✅ Data processing complete! 🚀
+[2025-03-08 16:08:14] [EXP-c2f522fe] 🔄 Loading data for tokenization...
+[2025-03-08 16:08:14] [EXP-c2f522fe] 🔄 Filtering long ingredient lists...
+[2025-03-08 16:08:41] [EXP-c2f522fe] 🚨 Saved 193 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-08 16:08:41] [EXP-c2f522fe] 🔹 Keeping 79633 rows for tokenization.
+[2025-03-08 16:08:41] [EXP-c2f522fe] 🔄 Tokenizing in 312 batches using 6 CPU cores...
+[2025-03-08 16:09:00] [EXP-c2f522fe] ✅ Merging tokenized results...
+[2025-03-08 16:09:01] [EXP-c2f522fe] ✅ Saved 32000 tokenized rows so far...
+[2025-03-08 16:09:02] [EXP-c2f522fe] ✅ Saved 64000 tokenized rows so far...
+[2025-03-08 16:09:02] [EXP-c2f522fe] ✅ Saving final tokenized dataset...
+[2025-03-08 16:09:05] [EXP-c2f522fe] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-08 16:09:08] [EXP-c2f522fe] 🚀 Using device: cuda
+[2025-03-08 16:09:08] [EXP-c2f522fe] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-08 16:17:02] [EXP-c2f522fe] ✅ Epoch 1/12 - Train Loss: 2.7614 | Val Loss: 1.4932
+[2025-03-08 16:17:03] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.7866, MSE: 21.5312, R²: 0.3046
+[2025-03-08 16:24:58] [EXP-c2f522fe] ✅ Epoch 2/12 - Train Loss: 1.6078 | Val Loss: 1.4024
+[2025-03-08 16:24:58] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.6741, MSE: 20.7241, R²: 0.3596
+[2025-03-08 16:32:53] [EXP-c2f522fe] ✅ Epoch 3/12 - Train Loss: 1.4199 | Val Loss: 1.1997
+[2025-03-08 16:32:53] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.4537, MSE: 17.7800, R²: 0.4216
+[2025-03-08 16:40:49] [EXP-c2f522fe] ✅ Epoch 4/12 - Train Loss: 1.3190 | Val Loss: 1.1481
+[2025-03-08 16:40:49] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.3941, MSE: 17.7505, R²: 0.4289
+[2025-03-08 16:48:44] [EXP-c2f522fe] ✅ Epoch 5/12 - Train Loss: 1.2609 | Val Loss: 1.1987
+[2025-03-08 16:48:44] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.4515, MSE: 18.6021, R²: 0.4217
+[2025-03-08 16:56:40] [EXP-c2f522fe] ✅ Epoch 6/12 - Train Loss: 1.2205 | Val Loss: 1.0878
+[2025-03-08 16:56:40] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.3325, MSE: 17.5612, R²: 0.4358
+[2025-03-08 17:04:36] [EXP-c2f522fe] ✅ Epoch 7/12 - Train Loss: 1.1904 | Val Loss: 1.1441
+[2025-03-08 17:04:36] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.3903, MSE: 18.3250, R²: 0.4319
+[2025-03-08 17:12:31] [EXP-c2f522fe] ✅ Epoch 8/12 - Train Loss: 1.1603 | Val Loss: 1.0580
+[2025-03-08 17:12:31] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.3030, MSE: 17.4740, R²: 0.4430
+[2025-03-08 17:20:27] [EXP-c2f522fe] ✅ Epoch 9/12 - Train Loss: 1.1455 | Val Loss: 1.0461
+[2025-03-08 17:20:27] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.2863, MSE: 17.2431, R²: 0.4522
+[2025-03-08 17:28:23] [EXP-c2f522fe] ✅ Epoch 10/12 - Train Loss: 1.1315 | Val Loss: 1.0289
+[2025-03-08 17:28:23] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.2619, MSE: 17.1689, R²: 0.4539
+[2025-03-08 17:36:19] [EXP-c2f522fe] ✅ Epoch 11/12 - Train Loss: 1.1172 | Val Loss: 1.0324
+[2025-03-08 17:36:19] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.2640, MSE: 17.2701, R²: 0.4531
+[2025-03-08 17:44:14] [EXP-c2f522fe] ✅ Epoch 12/12 - Train Loss: 1.1046 | Val Loss: 1.0105
+[2025-03-08 17:44:14] [EXP-c2f522fe] 📊 Validation Metrics - MAE: 1.2403, MSE: 17.0902, R²: 0.4588
+[2025-03-08 17:44:15] [EXP-c2f522fe] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_c2f522fe_lr_0.00012.pth
+[2025-03-08 17:44:16] [EXP-c2f522fe] ✅ Full validation predictions saved to logs\validation_predictions_c2f522fe.csv
+[2025-03-08 17:44:29] [EXP-c2f522fe] 📊 Training results appended to logs\training_results.csv
+[2025-03-08 18:34:40] [EXP-141c11cc] 🔄 Preparing data...
+[2025-03-08 18:34:40] [EXP-141c11cc] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-08 18:34:40] [EXP-141c11cc] 🔹 Using sample size: 10000
+[2025-03-08 18:34:40] [EXP-141c11cc] 🔄 Loading branded food data...
+[2025-03-08 18:34:46] [EXP-141c11cc] 🔹 Filtering dataset by category: Cheese
+[2025-03-08 18:34:47] [EXP-141c11cc] 🔹 Sampled branded food entries: 10000
+[2025-03-08 18:34:47] [EXP-141c11cc] 🔄 Loading nutrient data...
+[2025-03-08 18:34:58] [EXP-141c11cc] 🔄 Filtering relevant nutrients...
+[2025-03-08 18:34:59] [EXP-141c11cc] 🔄 Aggregating nutrient data...
+[2025-03-08 18:35:02] [EXP-141c11cc] 🔄 Pivoting nutrient data...
+[2025-03-08 18:35:03] [EXP-141c11cc] 🔄 Merging datasets...
+[2025-03-08 18:35:03] [EXP-141c11cc] 🔹 Merged dataset size: 10000
+[2025-03-08 18:35:03] [EXP-141c11cc] 🔄 Renaming nutrient columns...
+[2025-03-08 18:35:03] [EXP-141c11cc] 🔄 Converting Sodium from mg to g...
+[2025-03-08 18:35:03] [EXP-141c11cc] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-08 18:35:03] [EXP-141c11cc] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-08 18:35:03] [EXP-141c11cc] ⚠️ Removed 20 entries due to invalid nutrient values.
+[2025-03-08 18:35:03] [EXP-141c11cc] 🔄 Calculating 'Others' column...
+[2025-03-08 18:35:03] [EXP-141c11cc] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-08 18:35:03] [EXP-141c11cc] ✅ Data processing complete! 🚀
+[2025-03-08 18:35:03] [EXP-141c11cc] 🔄 Loading data for tokenization...
+[2025-03-08 18:35:03] [EXP-141c11cc] 🔄 Filtering long ingredient lists...
+[2025-03-08 18:35:07] [EXP-141c11cc] 🚨 Saved 36 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-08 18:35:07] [EXP-141c11cc] 🔹 Keeping 9944 rows for tokenization.
+[2025-03-08 18:35:07] [EXP-141c11cc] 🔄 Tokenizing in 39 batches using 6 CPU cores...
+[2025-03-08 18:35:18] [EXP-141c11cc] ✅ Merging tokenized results...
+[2025-03-08 18:35:18] [EXP-141c11cc] ✅ Saving final tokenized dataset...
+[2025-03-08 18:35:18] [EXP-141c11cc] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-08 18:35:20] [EXP-141c11cc] 🚀 Using device: cuda
+[2025-03-08 18:35:20] [EXP-141c11cc] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-08 18:36:18] [EXP-141c11cc] ✅ Epoch 1/12 - Train Loss: 4.8464 | Val Loss: 2.1749
+[2025-03-08 18:36:18] [EXP-141c11cc] 📊 Validation Metrics - MAE: 2.5740, MSE: 29.6926, R²: 0.0930
+[2025-03-08 18:37:16] [EXP-141c11cc] ✅ Epoch 2/12 - Train Loss: 2.5549 | Val Loss: 2.0088
+[2025-03-08 18:37:16] [EXP-141c11cc] 📊 Validation Metrics - MAE: 2.3373, MSE: 26.6311, R²: 0.1843
+[2025-03-08 18:38:14] [EXP-141c11cc] ✅ Epoch 3/12 - Train Loss: 2.3139 | Val Loss: 1.8904
+[2025-03-08 18:38:14] [EXP-141c11cc] 📊 Validation Metrics - MAE: 2.2025, MSE: 25.6444, R²: 0.2027
+[2025-03-08 18:39:13] [EXP-141c11cc] ✅ Epoch 4/12 - Train Loss: 2.1580 | Val Loss: 1.7152
+[2025-03-08 18:39:13] [EXP-141c11cc] 📊 Validation Metrics - MAE: 2.0599, MSE: 21.5645, R²: 0.2365
+[2025-03-08 18:40:12] [EXP-141c11cc] ✅ Epoch 5/12 - Train Loss: 1.9623 | Val Loss: 1.5462
+[2025-03-08 18:40:12] [EXP-141c11cc] 📊 Validation Metrics - MAE: 1.8592, MSE: 20.7988, R²: 0.2751
+[2025-03-08 18:41:11] [EXP-141c11cc] ✅ Epoch 6/12 - Train Loss: 1.8254 | Val Loss: 1.4380
+[2025-03-08 18:41:11] [EXP-141c11cc] 📊 Validation Metrics - MAE: 1.7517, MSE: 19.6033, R²: 0.3009
+[2025-03-08 18:42:10] [EXP-141c11cc] ✅ Epoch 7/12 - Train Loss: 1.7356 | Val Loss: 1.4267
+[2025-03-08 18:42:10] [EXP-141c11cc] 📊 Validation Metrics - MAE: 1.7270, MSE: 20.0185, R²: 0.3145
+[2025-03-08 18:43:08] [EXP-141c11cc] ✅ Epoch 8/12 - Train Loss: 1.6664 | Val Loss: 1.4155
+[2025-03-08 18:43:08] [EXP-141c11cc] 📊 Validation Metrics - MAE: 1.7263, MSE: 19.3949, R²: 0.3126
+[2025-03-08 18:44:07] [EXP-141c11cc] ✅ Epoch 9/12 - Train Loss: 1.6287 | Val Loss: 1.3778
+[2025-03-08 18:44:07] [EXP-141c11cc] 📊 Validation Metrics - MAE: 1.6801, MSE: 19.7055, R²: 0.3261
+[2025-03-08 18:45:06] [EXP-141c11cc] ✅ Epoch 10/12 - Train Loss: 1.5494 | Val Loss: 1.3685
+[2025-03-08 18:45:06] [EXP-141c11cc] 📊 Validation Metrics - MAE: 1.6667, MSE: 18.9621, R²: 0.3296
+[2025-03-08 18:46:05] [EXP-141c11cc] ✅ Epoch 11/12 - Train Loss: 1.5274 | Val Loss: 1.3051
+[2025-03-08 18:46:05] [EXP-141c11cc] 📊 Validation Metrics - MAE: 1.5927, MSE: 18.2752, R²: 0.3548
+[2025-03-08 18:47:04] [EXP-141c11cc] ✅ Epoch 12/12 - Train Loss: 1.4712 | Val Loss: 1.3463
+[2025-03-08 18:47:04] [EXP-141c11cc] 📊 Validation Metrics - MAE: 1.6389, MSE: 18.0403, R²: 0.3580
+[2025-03-08 18:47:04] [EXP-141c11cc] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_141c11cc_lr_0.00012.pth
+[2025-03-08 18:47:05] [EXP-141c11cc] ✅ Full validation predictions saved to logs\validation_predictions_141c11cc.csv
+[2025-03-08 18:47:07] [EXP-141c11cc] 📊 Training results appended to logs\training_results.csv
+[2025-03-08 18:49:45] [EXP-910e736f] 🔄 Preparing data...
+[2025-03-08 18:49:45] [EXP-910e736f] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-08 18:49:45] [EXP-910e736f] 🔹 Using sample size: 150000
+[2025-03-08 18:49:45] [EXP-910e736f] 🔄 Loading branded food data...
+[2025-03-08 18:49:51] [EXP-910e736f] 🔹 Sampled branded food entries: 150000
+[2025-03-08 18:49:51] [EXP-910e736f] 🔄 Loading nutrient data...
+[2025-03-08 18:50:03] [EXP-910e736f] 🔄 Filtering relevant nutrients...
+[2025-03-08 18:50:03] [EXP-910e736f] 🔄 Aggregating nutrient data...
+[2025-03-08 18:50:06] [EXP-910e736f] 🔄 Pivoting nutrient data...
+[2025-03-08 18:50:08] [EXP-910e736f] 🔄 Merging datasets...
+[2025-03-08 18:50:08] [EXP-910e736f] 🔹 Merged dataset size: 150000
+[2025-03-08 18:50:08] [EXP-910e736f] 🔄 Renaming nutrient columns...
+[2025-03-08 18:50:08] [EXP-910e736f] 🔄 Converting Sodium from mg to g...
+[2025-03-08 18:50:08] [EXP-910e736f] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-08 18:50:08] [EXP-910e736f] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-08 18:50:08] [EXP-910e736f] ⚠️ Removed 1213 entries due to invalid nutrient values.
+[2025-03-08 18:50:08] [EXP-910e736f] 🔄 Calculating 'Others' column...
+[2025-03-08 18:50:08] [EXP-910e736f] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-08 18:50:09] [EXP-910e736f] ✅ Data processing complete! 🚀
+[2025-03-08 18:50:09] [EXP-910e736f] 🔄 Loading data for tokenization...
+[2025-03-08 18:50:10] [EXP-910e736f] 🔄 Filtering long ingredient lists...
+[2025-03-08 18:51:36] [EXP-910e736f] 🚨 Saved 5737 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-08 18:51:36] [EXP-910e736f] 🔹 Keeping 143050 rows for tokenization.
+[2025-03-08 18:51:36] [EXP-910e736f] 🔄 Tokenizing in 559 batches using 6 CPU cores...
+[2025-03-08 18:52:09] [EXP-910e736f] ✅ Merging tokenized results...
+[2025-03-08 18:52:10] [EXP-910e736f] ✅ Saved 32000 tokenized rows so far...
+[2025-03-08 18:52:12] [EXP-910e736f] ✅ Saved 64000 tokenized rows so far...
+[2025-03-08 18:52:15] [EXP-910e736f] ✅ Saved 96000 tokenized rows so far...
+[2025-03-08 18:52:19] [EXP-910e736f] ✅ Saved 128000 tokenized rows so far...
+[2025-03-08 18:52:19] [EXP-910e736f] ✅ Saving final tokenized dataset...
+[2025-03-08 18:52:24] [EXP-910e736f] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-08 18:52:27] [EXP-910e736f] 🚀 Using device: cuda
+[2025-03-08 18:52:27] [EXP-910e736f] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-08 19:06:38] [EXP-910e736f] ✅ Epoch 1/12 - Train Loss: 2.9152 | Val Loss: 2.0079
+[2025-03-08 19:06:38] [EXP-910e736f] 📊 Validation Metrics - MAE: 2.3352, MSE: 36.0256, R²: 0.6000
+[2025-03-08 19:20:48] [EXP-910e736f] ✅ Epoch 2/12 - Train Loss: 2.0066 | Val Loss: 1.8499
+[2025-03-08 19:20:48] [EXP-910e736f] 📊 Validation Metrics - MAE: 2.1741, MSE: 32.0379, R²: 0.7253
+[2025-03-08 19:34:56] [EXP-910e736f] ✅ Epoch 3/12 - Train Loss: 1.8453 | Val Loss: 1.7474
+[2025-03-08 19:34:56] [EXP-910e736f] 📊 Validation Metrics - MAE: 2.0654, MSE: 30.6466, R²: 0.7136
+[2025-03-08 19:49:03] [EXP-910e736f] ✅ Epoch 4/12 - Train Loss: 1.7389 | Val Loss: 1.6387
+[2025-03-08 19:49:03] [EXP-910e736f] 📊 Validation Metrics - MAE: 1.9442, MSE: 28.5919, R²: 0.7519
+[2025-03-08 20:03:10] [EXP-910e736f] ✅ Epoch 5/12 - Train Loss: 1.6710 | Val Loss: 1.6404
+[2025-03-08 20:03:10] [EXP-910e736f] 📊 Validation Metrics - MAE: 1.9452, MSE: 29.8357, R²: 0.7518
+[2025-03-08 20:17:18] [EXP-910e736f] ✅ Epoch 6/12 - Train Loss: 1.6023 | Val Loss: 1.6160
+[2025-03-08 20:17:18] [EXP-910e736f] 📊 Validation Metrics - MAE: 1.9176, MSE: 29.2233, R²: 0.7543
+[2025-03-08 20:31:26] [EXP-910e736f] ✅ Epoch 7/12 - Train Loss: 1.5586 | Val Loss: 1.5768
+[2025-03-08 20:31:26] [EXP-910e736f] 📊 Validation Metrics - MAE: 1.8731, MSE: 28.8306, R²: 0.7599
+[2025-03-08 20:45:35] [EXP-910e736f] ✅ Epoch 8/12 - Train Loss: 1.5076 | Val Loss: 1.5534
+[2025-03-08 20:45:35] [EXP-910e736f] 📊 Validation Metrics - MAE: 1.8504, MSE: 28.0881, R²: 0.7618
+[2025-03-08 20:59:42] [EXP-910e736f] ✅ Epoch 9/12 - Train Loss: 1.4733 | Val Loss: 1.5368
+[2025-03-08 20:59:42] [EXP-910e736f] 📊 Validation Metrics - MAE: 1.8324, MSE: 27.7276, R²: 0.7609
+[2025-03-08 21:13:49] [EXP-910e736f] ✅ Epoch 10/12 - Train Loss: 1.4415 | Val Loss: 1.5443
+[2025-03-08 21:13:49] [EXP-910e736f] 📊 Validation Metrics - MAE: 1.8376, MSE: 28.1811, R²: 0.7598
+[2025-03-08 21:27:56] [EXP-910e736f] ✅ Epoch 11/12 - Train Loss: 1.4103 | Val Loss: 1.5134
+[2025-03-08 21:27:56] [EXP-910e736f] 📊 Validation Metrics - MAE: 1.8048, MSE: 27.8640, R²: 0.7640
+[2025-03-08 21:42:03] [EXP-910e736f] ✅ Epoch 12/12 - Train Loss: 1.3832 | Val Loss: 1.5102
+[2025-03-08 21:42:03] [EXP-910e736f] 📊 Validation Metrics - MAE: 1.7978, MSE: 28.1527, R²: 0.7607
+[2025-03-08 21:42:04] [EXP-910e736f] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_910e736f_lr_0.00012.pth
+[2025-03-08 21:42:05] [EXP-910e736f] ✅ Full validation predictions saved to logs\validation_predictions_910e736f.csv
+[2025-03-08 21:42:29] [EXP-910e736f] 📊 Training results appended to logs\training_results.csv
+[2025-03-08 23:41:21] [EXP-7cd5bb06] 🔄 Preparing data...
+[2025-03-08 23:41:21] [EXP-7cd5bb06] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-08 23:41:21] [EXP-7cd5bb06] 🔹 Using sample size: 300000
+[2025-03-08 23:41:21] [EXP-7cd5bb06] 🔄 Loading branded food data...
+[2025-03-08 23:41:27] [EXP-7cd5bb06] 🔹 Sampled branded food entries: 300000
+[2025-03-08 23:41:27] [EXP-7cd5bb06] 🔄 Loading nutrient data...
+[2025-03-08 23:41:38] [EXP-7cd5bb06] 🔄 Filtering relevant nutrients...
+[2025-03-08 23:41:39] [EXP-7cd5bb06] 🔄 Aggregating nutrient data...
+[2025-03-08 23:41:42] [EXP-7cd5bb06] 🔄 Pivoting nutrient data...
+[2025-03-08 23:41:43] [EXP-7cd5bb06] 🔄 Merging datasets...
+[2025-03-08 23:41:43] [EXP-7cd5bb06] 🔹 Merged dataset size: 300000
+[2025-03-08 23:41:43] [EXP-7cd5bb06] 🔄 Renaming nutrient columns...
+[2025-03-08 23:41:43] [EXP-7cd5bb06] 🔄 Converting Sodium from mg to g...
+[2025-03-08 23:41:43] [EXP-7cd5bb06] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-08 23:41:43] [EXP-7cd5bb06] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-08 23:41:43] [EXP-7cd5bb06] ⚠️ Removed 2429 entries due to invalid nutrient values.
+[2025-03-08 23:41:43] [EXP-7cd5bb06] 🔄 Calculating 'Others' column...
+[2025-03-08 23:41:43] [EXP-7cd5bb06] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-08 23:41:46] [EXP-7cd5bb06] ✅ Data processing complete! 🚀
+[2025-03-08 23:41:46] [EXP-7cd5bb06] 🔄 Loading data for tokenization...
+[2025-03-08 23:41:48] [EXP-7cd5bb06] 🔄 Filtering long ingredient lists...
+[2025-03-08 23:44:31] [EXP-7cd5bb06] 🚨 Saved 11541 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-08 23:44:31] [EXP-7cd5bb06] 🔹 Keeping 286030 rows for tokenization.
+[2025-03-08 23:44:31] [EXP-7cd5bb06] 🔄 Tokenizing in 1118 batches using 6 CPU cores...
+[2025-03-08 23:45:27] [EXP-7cd5bb06] ✅ Merging tokenized results...
+[2025-03-08 23:45:28] [EXP-7cd5bb06] ✅ Saved 32000 tokenized rows so far...
+[2025-03-08 23:45:29] [EXP-7cd5bb06] ✅ Saved 64000 tokenized rows so far...
+[2025-03-08 23:45:32] [EXP-7cd5bb06] ✅ Saved 96000 tokenized rows so far...
+[2025-03-08 23:45:36] [EXP-7cd5bb06] ✅ Saved 128000 tokenized rows so far...
+[2025-03-08 23:45:41] [EXP-7cd5bb06] ✅ Saved 160000 tokenized rows so far...
+[2025-03-08 23:45:48] [EXP-7cd5bb06] ✅ Saved 192000 tokenized rows so far...
+[2025-03-08 23:45:54] [EXP-7cd5bb06] ✅ Saved 224000 tokenized rows so far...
+[2025-03-08 23:46:02] [EXP-7cd5bb06] ✅ Saved 256000 tokenized rows so far...
+[2025-03-08 23:46:02] [EXP-7cd5bb06] ✅ Saving final tokenized dataset...
+[2025-03-08 23:46:12] [EXP-7cd5bb06] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-08 23:46:18] [EXP-7cd5bb06] 🚀 Using device: cuda
+[2025-03-08 23:46:18] [EXP-7cd5bb06] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-09 00:14:39] [EXP-7cd5bb06] ✅ Epoch 1/12 - Train Loss: 2.5822 | Val Loss: 1.9203
+[2025-03-09 00:14:39] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 2.2469, MSE: 36.0145, R²: 0.7101
+[2025-03-09 00:42:55] [EXP-7cd5bb06] ✅ Epoch 2/12 - Train Loss: 1.8832 | Val Loss: 1.7007
+[2025-03-09 00:42:55] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 2.0110, MSE: 30.5924, R²: 0.7434
+[2025-03-09 01:11:12] [EXP-7cd5bb06] ✅ Epoch 3/12 - Train Loss: 1.7405 | Val Loss: 1.6429
+[2025-03-09 01:11:12] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.9484, MSE: 29.9302, R²: 0.7484
+[2025-03-09 01:39:28] [EXP-7cd5bb06] ✅ Epoch 4/12 - Train Loss: 1.6598 | Val Loss: 1.5748
+[2025-03-09 01:39:28] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.8771, MSE: 29.0627, R²: 0.7558
+[2025-03-09 02:07:44] [EXP-7cd5bb06] ✅ Epoch 5/12 - Train Loss: 1.5964 | Val Loss: 1.5117
+[2025-03-09 02:07:44] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.8064, MSE: 28.1290, R²: 0.7686
+[2025-03-09 02:36:00] [EXP-7cd5bb06] ✅ Epoch 6/12 - Train Loss: 1.5485 | Val Loss: 1.5519
+[2025-03-09 02:36:00] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.8408, MSE: 29.6281, R²: 0.7621
+[2025-03-09 03:04:17] [EXP-7cd5bb06] ✅ Epoch 7/12 - Train Loss: 1.5076 | Val Loss: 1.4617
+[2025-03-09 03:04:17] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.7534, MSE: 27.1305, R²: 0.7778
+[2025-03-09 03:32:33] [EXP-7cd5bb06] ✅ Epoch 8/12 - Train Loss: 1.4737 | Val Loss: 1.4294
+[2025-03-09 03:32:33] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.7135, MSE: 26.3511, R²: 0.7769
+[2025-03-09 04:00:47] [EXP-7cd5bb06] ✅ Epoch 9/12 - Train Loss: 1.4494 | Val Loss: 1.4965
+[2025-03-09 04:00:47] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.7864, MSE: 28.5794, R²: 0.7717
+[2025-03-09 04:29:03] [EXP-7cd5bb06] ✅ Epoch 10/12 - Train Loss: 1.4215 | Val Loss: 1.4801
+[2025-03-09 04:29:03] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.7705, MSE: 28.2717, R²: 0.7695
+[2025-03-09 04:57:18] [EXP-7cd5bb06] ✅ Epoch 11/12 - Train Loss: 1.4022 | Val Loss: 1.3776
+[2025-03-09 04:57:18] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.6614, MSE: 26.3245, R²: 0.7827
+[2025-03-09 05:25:30] [EXP-7cd5bb06] ✅ Epoch 12/12 - Train Loss: 1.3787 | Val Loss: 1.4167
+[2025-03-09 05:25:30] [EXP-7cd5bb06] 📊 Validation Metrics - MAE: 1.6988, MSE: 27.6342, R²: 0.7797
+[2025-03-09 05:25:31] [EXP-7cd5bb06] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_7cd5bb06_lr_0.00012.pth
+[2025-03-09 05:25:32] [EXP-7cd5bb06] ✅ Full validation predictions saved to logs\validation_predictions_7cd5bb06.csv
+[2025-03-09 05:26:20] [EXP-7cd5bb06] 📊 Training results appended to logs\training_results.csv
+[2025-03-10 17:56:45] [EXP-bf14f615] 🔄 Preparing data...
+[2025-03-10 17:56:45] [EXP-bf14f615] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-10 17:56:45] [EXP-bf14f615] 🔹 Using sample size: 80000
+[2025-03-10 17:56:45] [EXP-bf14f615] 🔄 Loading branded food data...
+[2025-03-10 17:56:52] [EXP-bf14f615] 🔹 Sampled branded food entries: 80000
+[2025-03-10 17:56:52] [EXP-bf14f615] 🔄 Loading nutrient data...
+[2025-03-10 17:57:03] [EXP-bf14f615] 🔄 Filtering relevant nutrients...
+[2025-03-10 17:57:03] [EXP-bf14f615] 🔄 Aggregating nutrient data...
+[2025-03-10 17:57:06] [EXP-bf14f615] 🔄 Pivoting nutrient data...
+[2025-03-10 17:57:07] [EXP-bf14f615] 🔄 Merging datasets...
+[2025-03-10 17:57:08] [EXP-bf14f615] 🔹 Merged dataset size: 80000
+[2025-03-10 17:57:08] [EXP-bf14f615] 🔄 Renaming nutrient columns...
+[2025-03-10 17:57:08] [EXP-bf14f615] 🔄 Converting Sodium from mg to g...
+[2025-03-10 17:57:08] [EXP-bf14f615] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-10 17:57:08] [EXP-bf14f615] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-10 17:57:08] [EXP-bf14f615] ⚠️ Removed 670 entries due to invalid nutrient values.
+[2025-03-10 17:57:08] [EXP-bf14f615] 🔄 Calculating 'Others' column...
+[2025-03-10 17:57:08] [EXP-bf14f615] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-10 17:57:08] [EXP-bf14f615] ✅ Data processing complete! 🚀
+[2025-03-10 17:57:09] [EXP-bf14f615] 🔄 Loading data for tokenization...
+[2025-03-10 17:57:09] [EXP-bf14f615] 🔄 Filtering long ingredient lists...
+[2025-03-10 17:57:56] [EXP-bf14f615] 🚨 Saved 3104 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-10 17:57:56] [EXP-bf14f615] 🔹 Keeping 76226 rows for tokenization.
+[2025-03-10 17:57:56] [EXP-bf14f615] 🔄 Tokenizing in 298 batches using 6 CPU cores...
+[2025-03-10 17:58:21] [EXP-bf14f615] ✅ Merging tokenized results...
+[2025-03-10 17:58:22] [EXP-bf14f615] ✅ Saved 32000 tokenized rows so far...
+[2025-03-10 17:58:24] [EXP-bf14f615] ✅ Saved 64000 tokenized rows so far...
+[2025-03-10 17:58:24] [EXP-bf14f615] ✅ Saving final tokenized dataset...
+[2025-03-10 17:58:28] [EXP-bf14f615] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-10 17:58:31] [EXP-bf14f615] 🚀 Using device: cuda
+[2025-03-10 17:58:31] [EXP-bf14f615] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-10 18:06:01] [EXP-bf14f615] ✅ Epoch 1/12 - Train Loss: 3.4620 | Val Loss: 2.2115
+[2025-03-10 18:06:01] [EXP-bf14f615] 📊 Validation Metrics - MAE: 2.5649, MSE: 39.7820, R²: 0.5048
+[2025-03-10 18:13:36] [EXP-bf14f615] ✅ Epoch 2/12 - Train Loss: 2.2832 | Val Loss: 1.9866
+[2025-03-10 18:13:36] [EXP-bf14f615] 📊 Validation Metrics - MAE: 2.3126, MSE: 35.1108, R²: 0.5549
+[2025-03-10 18:21:07] [EXP-bf14f615] ✅ Epoch 3/12 - Train Loss: 2.0548 | Val Loss: 1.9011
+[2025-03-10 18:21:07] [EXP-bf14f615] 📊 Validation Metrics - MAE: 2.2207, MSE: 35.0475, R²: 0.6333
+[2025-03-10 18:28:38] [EXP-bf14f615] ✅ Epoch 4/12 - Train Loss: 1.9019 | Val Loss: 1.7941
+[2025-03-10 18:28:38] [EXP-bf14f615] 📊 Validation Metrics - MAE: 2.1094, MSE: 31.7359, R²: 0.7131
+[2025-03-10 18:36:09] [EXP-bf14f615] ✅ Epoch 5/12 - Train Loss: 1.7926 | Val Loss: 1.7841
+[2025-03-10 18:36:09] [EXP-bf14f615] 📊 Validation Metrics - MAE: 2.1023, MSE: 33.2174, R²: 0.7229
+[2025-03-10 18:43:40] [EXP-bf14f615] ✅ Epoch 6/12 - Train Loss: 1.7226 | Val Loss: 1.7809
+[2025-03-10 18:43:40] [EXP-bf14f615] 📊 Validation Metrics - MAE: 2.0870, MSE: 32.1143, R²: 0.7341
+[2025-03-10 18:51:13] [EXP-bf14f615] ✅ Epoch 7/12 - Train Loss: 1.6707 | Val Loss: 1.7544
+[2025-03-10 18:51:13] [EXP-bf14f615] 📊 Validation Metrics - MAE: 2.0597, MSE: 32.2089, R²: 0.7284
+[2025-03-10 18:58:44] [EXP-bf14f615] ✅ Epoch 8/12 - Train Loss: 1.6193 | Val Loss: 1.7116
+[2025-03-10 18:58:44] [EXP-bf14f615] 📊 Validation Metrics - MAE: 2.0190, MSE: 31.2269, R²: 0.7417
+[2025-03-10 19:06:16] [EXP-bf14f615] ✅ Epoch 9/12 - Train Loss: 1.5644 | Val Loss: 1.7119
+[2025-03-10 19:06:16] [EXP-bf14f615] 📊 Validation Metrics - MAE: 2.0205, MSE: 32.1992, R²: 0.7393
+[2025-03-10 19:13:47] [EXP-bf14f615] ✅ Epoch 10/12 - Train Loss: 1.5246 | Val Loss: 1.6941
+[2025-03-10 19:13:47] [EXP-bf14f615] 📊 Validation Metrics - MAE: 1.9936, MSE: 32.6800, R²: 0.7398
+[2025-03-10 19:21:18] [EXP-bf14f615] ✅ Epoch 11/12 - Train Loss: 1.4945 | Val Loss: 1.6490
+[2025-03-10 19:21:18] [EXP-bf14f615] 📊 Validation Metrics - MAE: 1.9500, MSE: 30.6783, R²: 0.7454
+[2025-03-10 19:28:49] [EXP-bf14f615] ✅ Epoch 12/12 - Train Loss: 1.4564 | Val Loss: 1.6678
+[2025-03-10 19:28:49] [EXP-bf14f615] 📊 Validation Metrics - MAE: 1.9671, MSE: 31.5877, R²: 0.7304
+[2025-03-10 19:28:50] [EXP-bf14f615] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_bf14f615_lr_0.00012.pth
+[2025-03-10 19:28:51] [EXP-bf14f615] ✅ Full validation predictions saved to logs\validation_predictions_bf14f615.csv
+[2025-03-10 19:29:04] [EXP-bf14f615] 📊 Training results appended to logs\training_results.csv
+[2025-03-11 13:57:36] [EXP-2bb81b72] 🔄 Preparing data...
+[2025-03-11 13:57:36] [EXP-2bb81b72] ℹ️ Nutrients retained in dataset: ['Protein', 'Total Fat', 'Sodium, Na', 'Total Sugar', 'Total Fiber']
+[2025-03-11 13:57:36] [EXP-2bb81b72] 🔹 Using sample size: 10000
+[2025-03-11 13:57:36] [EXP-2bb81b72] 🔄 Loading branded food data...
+[2025-03-11 13:57:43] [EXP-2bb81b72] 🔹 Sampled branded food entries: 10000
+[2025-03-11 13:57:43] [EXP-2bb81b72] 🔄 Loading nutrient data...
+[2025-03-11 13:57:54] [EXP-2bb81b72] 🔄 Filtering relevant nutrients...
+[2025-03-11 13:57:55] [EXP-2bb81b72] 🔄 Aggregating nutrient data...
+[2025-03-11 13:57:57] [EXP-2bb81b72] 🔄 Pivoting nutrient data...
+[2025-03-11 13:57:59] [EXP-2bb81b72] 🔄 Merging datasets...
+[2025-03-11 13:57:59] [EXP-2bb81b72] 🔹 Merged dataset size: 10000
+[2025-03-11 13:57:59] [EXP-2bb81b72] 🔄 Renaming nutrient columns...
+[2025-03-11 13:57:59] [EXP-2bb81b72] 🔄 Converting Sodium from mg to g...
+[2025-03-11 13:57:59] [EXP-2bb81b72] 🔄 Filtering dataset to retain only relevant columns...
+[2025-03-11 13:57:59] [EXP-2bb81b72] 🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...
+[2025-03-11 13:57:59] [EXP-2bb81b72] ⚠️ Removed 96 entries due to invalid nutrient values.
+[2025-03-11 13:57:59] [EXP-2bb81b72] 🔄 Calculating 'Others' column...
+[2025-03-11 13:57:59] [EXP-2bb81b72] ✅ Saving processed dataset to 'data.csv'...
+[2025-03-11 13:57:59] [EXP-2bb81b72] ✅ Data processing complete! 🚀
+[2025-03-11 13:57:59] [EXP-2bb81b72] 🔄 Loading data for tokenization...
+[2025-03-11 13:57:59] [EXP-2bb81b72] 🔄 Filtering long ingredient lists...
+[2025-03-11 13:58:05] [EXP-2bb81b72] 🚨 Saved 377 long ingredient entries to 'long_ingredients.csv'.
+[2025-03-11 13:58:05] [EXP-2bb81b72] 🔹 Keeping 9527 rows for tokenization.
+[2025-03-11 13:58:05] [EXP-2bb81b72] 🔄 Tokenizing in 38 batches using 6 CPU cores...
+[2025-03-11 13:58:16] [EXP-2bb81b72] ✅ Merging tokenized results...
+[2025-03-11 13:58:16] [EXP-2bb81b72] ✅ Saving final tokenized dataset...
+[2025-03-11 13:58:17] [EXP-2bb81b72] ✅ Tokenization complete. Saved to 'tokenized_data.csv'.
+[2025-03-11 13:58:18] [EXP-2bb81b72] 🚀 Using device: cuda
+[2025-03-11 13:58:18] [EXP-2bb81b72] 
+🚀 Training with learning rate: 0.00012
+
+[2025-03-11 13:59:14] [EXP-2bb81b72] ✅ Epoch 1/12 - Train Loss: 5.7305 | Val Loss: 5.3135
+[2025-03-11 13:59:14] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 5.6826, MSE: 169.4772, R²: -0.0051
+[2025-03-11 14:00:10] [EXP-2bb81b72] ✅ Epoch 2/12 - Train Loss: 4.9272 | Val Loss: 4.8912
+[2025-03-11 14:00:10] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 5.2728, MSE: 147.5790, R²: 0.0985
+[2025-03-11 14:01:06] [EXP-2bb81b72] ✅ Epoch 3/12 - Train Loss: 4.0585 | Val Loss: 3.2894
+[2025-03-11 14:01:06] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 3.6611, MSE: 63.6829, R²: 0.3216
+[2025-03-11 14:02:03] [EXP-2bb81b72] ✅ Epoch 4/12 - Train Loss: 3.0915 | Val Loss: 3.0313
+[2025-03-11 14:02:03] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 3.4050, MSE: 56.0389, R²: 0.3851
+[2025-03-11 14:02:59] [EXP-2bb81b72] ✅ Epoch 5/12 - Train Loss: 2.7013 | Val Loss: 2.7011
+[2025-03-11 14:02:59] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 3.0504, MSE: 50.5957, R²: 0.4224
+[2025-03-11 14:03:56] [EXP-2bb81b72] ✅ Epoch 6/12 - Train Loss: 2.5013 | Val Loss: 2.6164
+[2025-03-11 14:03:56] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 2.9613, MSE: 47.9656, R²: 0.4554
+[2025-03-11 14:04:53] [EXP-2bb81b72] ✅ Epoch 7/12 - Train Loss: 2.2753 | Val Loss: 2.5848
+[2025-03-11 14:04:53] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 2.9294, MSE: 47.4763, R²: 0.4646
+[2025-03-11 14:05:50] [EXP-2bb81b72] ✅ Epoch 8/12 - Train Loss: 2.1515 | Val Loss: 2.5648
+[2025-03-11 14:05:50] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 2.9133, MSE: 49.2535, R²: 0.4730
+[2025-03-11 14:06:47] [EXP-2bb81b72] ✅ Epoch 9/12 - Train Loss: 2.0413 | Val Loss: 2.3196
+[2025-03-11 14:06:47] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 2.6619, MSE: 42.4607, R²: 0.4897
+[2025-03-11 14:07:43] [EXP-2bb81b72] ✅ Epoch 10/12 - Train Loss: 1.9341 | Val Loss: 2.3628
+[2025-03-11 14:07:43] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 2.6901, MSE: 44.8884, R²: 0.4948
+[2025-03-11 14:08:39] [EXP-2bb81b72] ✅ Epoch 11/12 - Train Loss: 1.8826 | Val Loss: 2.3097
+[2025-03-11 14:08:39] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 2.6361, MSE: 43.9961, R²: 0.5059
+[2025-03-11 14:09:36] [EXP-2bb81b72] ✅ Epoch 12/12 - Train Loss: 1.7938 | Val Loss: 2.3440
+[2025-03-11 14:09:36] [EXP-2bb81b72] 📊 Validation Metrics - MAE: 2.6781, MSE: 44.8373, R²: 0.5001
+[2025-03-11 14:09:36] [EXP-2bb81b72] ✅ Best model for LR 0.00012 saved to logs/best_model_exp_2bb81b72_lr_0.00012.pth
+[2025-03-11 14:09:37] [EXP-2bb81b72] ✅ Full validation predictions saved to logs\validation_predictions_2bb81b72.csv
+[2025-03-11 14:09:39] [EXP-2bb81b72] 📊 Training results appended to logs\training_results.csv

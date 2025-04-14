@@ -339,3 +339,145 @@ def log_misclassification_distribution(targets, predictions, experiment_id, nutr
 
     print(f"✅ Misclassification distribution logged in {log_file}")
 
+def calculate_percentage_differences(exp_id):
+    """
+    Reads the validation predictions file, calculates percentage differences 
+    between target and predicted values for each nutrient, and saves results to a new CSV.
+    
+    Args:
+        exp_id (str): Experiment ID used to locate the validation predictions CSV.
+    """
+    # Define file paths
+    input_file = os.path.join("logs", f"validation_predictions_{exp_id}.csv")
+    output_file = os.path.join("logs", f"percentage_differences_{exp_id}.csv")
+
+    # Check if the file exists
+    if not os.path.exists(input_file):
+        print(f"⚠️ File not found: {input_file}")
+        return
+
+    # Load CSV
+    df = pd.read_csv(input_file)
+
+    # Identify nutrient names (excluding "Predicted_" columns)
+    nutrients = [col for col in df.columns if not col.startswith("Predicted_")]
+
+    # Small epsilon to avoid division by zero
+    epsilon = 1e-5
+
+    # Calculate percentage differences safely
+    for nutrient in nutrients:
+        predicted_col = f"Predicted_{nutrient}"
+        if predicted_col in df.columns:
+            df[f"Diff_{nutrient} (%)"] = ((df[predicted_col] - df[nutrient]) / (df[nutrient] + epsilon)).abs() * 100
+
+    # Keep only relevant columns (original + differences)
+    diff_columns = [col for col in df.columns if col.startswith("Diff_")]
+    result_df = df[nutrients + diff_columns]
+
+    # Save to CSV
+    result_df.to_csv(output_file, index=False)
+    print(f"✅ Percentage differences saved to: {output_file}")
+
+def check_nutrient_ranges(exp_id, nutrient_names):
+    """
+    Prints min and max values for actual and predicted nutrients.
+
+    Args:
+        exp_id (str): Experiment ID to identify the correct CSV file.
+        nutrient_names (list): List of nutrients to check.
+
+    Returns:
+        None
+    """
+    file_path = os.path.join(LOGS_DIR, f"validation_predictions_{exp_id}.csv")
+
+    if not os.path.exists(file_path):
+        print(f"⚠️ File not found: {file_path}")
+        return
+
+    # Load CSV
+    df = pd.read_csv(file_path)
+
+    # Check for each nutrient
+    for nutrient in nutrient_names:
+        predicted_nutrient = f"Predicted_{nutrient}"
+
+        if nutrient not in df.columns or predicted_nutrient not in df.columns:
+            print(f"⚠️ Missing columns for {nutrient}. Skipping.")
+            continue
+
+        # Compute min/max values
+        actual_min, actual_max = df[nutrient].min(), df[nutrient].max()
+        predicted_min, predicted_max = df[predicted_nutrient].min(), df[predicted_nutrient].max()
+
+        # Print results
+        print(f"🔎 {nutrient}:")
+        print(f"   ✅ Actual: Min = {actual_min:.2f}, Max = {actual_max:.2f}")
+        print(f"   ✅ Predicted: Min = {predicted_min:.2f}, Max = {predicted_max:.2f}\n")
+
+def save_high_nutrient_rows(exp_id, nutrient_names, threshold=100):
+    """
+    Saves rows where any actual or predicted nutrient value exceeds the threshold.
+
+    Args:
+        exp_id (str): Experiment ID to identify the correct CSV file.
+        nutrient_names (list): List of nutrients to check.
+        threshold (float): Value above which a row is considered problematic (default=100g).
+
+    Returns:
+        None
+    """
+    file_path = os.path.join(LOGS_DIR, f"validation_predictions_{exp_id}.csv")
+    output_file = os.path.join(LOGS_DIR, f"high_nutrient_values_{exp_id}.csv")
+
+    if not os.path.exists(file_path):
+        print(f"⚠️ File not found: {file_path}")
+        return
+
+    # Load CSV
+    df = pd.read_csv(file_path)
+
+    # Create condition to filter rows where any actual or predicted nutrient is above the threshold
+    condition = df[nutrient_names].gt(threshold).any(axis=1) | df[[f"Predicted_{nutrient}" for nutrient in nutrient_names]].gt(threshold).any(axis=1)
+
+    # Filter rows
+    high_nutrient_df = df[condition]
+
+    if high_nutrient_df.empty:
+        print("✅ No rows found where any nutrient exceeds 100g.")
+        return
+
+    # Save to CSV
+    high_nutrient_df.to_csv(output_file, index=False)
+    print(f"✅ High-nutrient values saved to: {output_file}")
+
+def save_experiment_results_to_csv(experiments, filename="experiment_results.csv"):
+    """
+    Saves the experiment results into a CSV file.
+
+    Args:
+        experiments (list of dicts): List of experiment result dictionaries.
+        filename (str): Name of the output CSV file.
+    """
+    # Create a DataFrame from the experiment results
+    df = pd.DataFrame(experiments)
+
+    # Define the desired column order
+    column_order = ["experiment_id", "sample_size", "best_validation_loss", "final_train_loss", "mae", "mse", "r2_score"]
+
+    # Reorder columns
+    df = df[column_order]
+
+    # Sort by sample size in ascending order
+    df = df.sort_values(by="sample_size", ascending=True)
+
+    # Save to CSV
+    df.to_csv(filename, index=False, encoding="utf-8")
+
+    print(f"✅ Experiment results saved to {filename}")
+
+
+
+
+

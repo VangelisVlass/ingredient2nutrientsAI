@@ -17,12 +17,12 @@ CONFIG = {
     "batch_size": 64,
     "epochs": 12,
     "learning_rates": [1.2e-4],
-    "loss_function": "SmoothL1Loss",
-    "filtered_food_category": "Cheese", # Options in branded_food_category_count file or "no_filter"
+    "loss_function": "SmoothL1Loss",  # Options: "MSELoss", "SmoothL1Loss", "L1Loss", "HuberLoss"
+    "filtered_food_category": "no_filter", # Options in branded_food_category_count file or "no_filter"
     "nutrients_predicted": ["Protein", "Total Fat", "Sodium, Na", "Total Sugar", "Total Fiber"],
-    "sample_size": 80000,
+    "sample_size": 10000,
     "normalise": "none", # Options: "none", "Softmax"
     "hidden_layers": [ 512, 256, 128],
     "dropout_rate": 0.1,
-    "activation_function": "gelu"  # Options: "gelu", "swish", "relu", "tanh", "sigmoid"
+    "activation_function": "relu"  # Options: "gelu", "swish", "relu", "tanh", "sigmoid"
 }

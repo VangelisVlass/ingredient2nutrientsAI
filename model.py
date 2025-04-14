@@ -1,7 +1,7 @@
-import torch
+# 🏗️ **MODEL DEFINITION**
 import torch.nn as nn
 from transformers import DistilBertModel
-from config import CONFIG 
+from config import CONFIG
 
 # Define activation functions with explanations
 activation_map = {
@@ -31,13 +31,6 @@ activation_map = {
     # ❌ Can cause vanishing gradients when values approach 0 or 1
 }
 
-
-# 🏗️ **MODEL DEFINITION**
-import torch
-import torch.nn as nn
-from transformers import DistilBertModel
-from config import CONFIG
-
 # Define activation function mappings
 activation_map = {
     "gelu": nn.GELU(),
@@ -46,6 +39,24 @@ activation_map = {
     "tanh": nn.Tanh(),
     "sigmoid": nn.Sigmoid(),
 }
+
+# 📊 **LOSS FUNCTION HANDLER**
+def get_loss_function():
+    """
+    Returns the loss function based on the configuration.
+
+    Returns:
+        torch.nn loss function.
+    """
+    loss_functions = {
+        "SmoothL1Loss": nn.SmoothL1Loss(),
+        "MSELoss": nn.MSELoss(),
+        "L1Loss": nn.L1Loss(),
+        "HuberLoss": nn.HuberLoss()
+    }
+
+    selected_loss = CONFIG.get("loss_function", "MSELoss")
+    return loss_functions.get(selected_loss, nn.MSELoss())  
 
 class ModifiedDistilBERT(nn.Module):
     def __init__(self, output_size=len(CONFIG["nutrients_predicted"])):

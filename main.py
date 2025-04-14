@@ -8,6 +8,9 @@ import numpy as np
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 from log_manager import (
+    LOGS_DIR,
+    calculate_percentage_differences,
+    check_nutrient_ranges,
     log_correlation_matrix, 
     log_feature_importance, 
     log_loss_per_epoch, 
@@ -16,13 +19,25 @@ from log_manager import (
     log_misclassification_distribution, 
     log_training_results, 
     log_best_validation_results, 
-    log_full_validation_predictions)
+    log_full_validation_predictions,
+    save_experiment_results_to_csv,
+    save_high_nutrient_rows)
 
-from plot_manager import generate_all_plots
+from plot_manager import  (
+    plot_actual_vs_predicted,
+    plot_batch_size_vs_convergence, 
+    plot_bland_altman, 
+    plot_bland_altman_all,
+    plot_correlation_matrix,
+    plot_loss_function_comparison,
+    plot_loss_per_epoch,
+    plot_misclassification, 
+    plot_nutrient_accuracy, 
+    plot_percentage_difference_boxplot)
 from process_data import process_data, save_branded_food_category
 from tokenize_ingredients import tokenize_ingredients
 from softmax import inverse_softmax
-from model import ModifiedDistilBERT 
+from model import ModifiedDistilBERT, get_loss_function
 from config import CONFIG
 from experiment import EXPERIMENT_ID
 
@@ -90,13 +105,14 @@ def train_model():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     log_message(f"🚀 Using device: {device}")
 
-    best_overall_loss = float("inf")
+    best_val_loss = float("inf")
     best_lr = None
     best_epoch_predictions = None
     best_epoch_targets = None
     best_epoch_all_preds = None
     best_epoch_all_targets = None
     best_hidden_representations = None  # Stores the best epoch's hidden representations
+    
 
     for lr in CONFIG["learning_rates"]:
         log_message(f"\n🚀 Training with learning rate: {lr}\n")
@@ -104,9 +120,7 @@ def train_model():
         model = ModifiedDistilBERT()
         model.to(device)
         optimizer = AdamW(model.parameters(), lr=lr)
-        loss_function = nn.SmoothL1Loss() if CONFIG["loss_function"] == "SmoothL1Loss" else nn.MSELoss()
-
-        best_val_loss = float("inf")
+        loss_function = get_loss_function()
         best_model_state = None
 
         for epoch in range(CONFIG["epochs"]):
@@ -199,6 +213,7 @@ def train_model():
             # 🔹 **Track Best Validation Results**
             if avg_val_loss < best_val_loss:
                 best_val_loss = avg_val_loss
+                best_lr = lr
                 best_model_state = model.state_dict()
                 best_epoch_predictions = np.mean(all_preds_original, axis=0)
                 best_epoch_targets = np.mean(all_targets_original, axis=0)
@@ -233,14 +248,14 @@ def train_model():
         log_correlation_matrix(best_hidden_representations, best_epoch_all_targets, CONFIG["experiment_id"], CONFIG["nutrients_predicted"])
 
     # 🔹 **Log Training Results**
-    log_training_results(best_overall_loss, avg_train_loss, best_lr, mae, mse, r2)
+    log_training_results(best_val_loss, avg_train_loss, best_lr, mae, mse, r2)
 
 
 # 🚀 **MAIN EXECUTION**
 def main():
     #prepare_data()
-    #train_model()
-    generate_all_plots("86af4f4b")
-
+    #train_model()   
+    plot_misclassification("3555bffe")
+    
 if __name__ == "__main__":
     main()

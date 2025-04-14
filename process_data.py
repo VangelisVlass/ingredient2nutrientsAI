@@ -9,6 +9,7 @@ EXPERIMENTS_FILE = "experiments.json"
 def process_data(branded_food_file, food_nutrient_file, category_name="no_filter", output_file="data.csv", sample_size=5000):
     """
     Processes food data by merging branded food and nutrient information,
+    filtering out invalid entries (nutrient values > 100g),
     computing the 'Others' column, applying softmax normalization (if enabled),
     and ensuring all values are per 100g/ml. Allows filtering by branded food category.
 
@@ -89,6 +90,24 @@ def process_data(branded_food_file, food_nutrient_file, category_name="no_filter
     nutrient_cols = list(relevant_nutrients.values())
     columns_to_keep = ["fdc_id", "ingredients", "branded_food_category"] + nutrient_cols
     merged_data = merged_data[[col for col in columns_to_keep if col in merged_data.columns]]
+
+    # 🔍 **Exclude rows where any individual nutrient > 100g OR total sum > 100g**
+    log_message("🔍 Identifying and removing invalid nutrient values (>100g or total >100g)...")
+
+    before_filtering = len(merged_data)
+
+    # Condition 1: All nutrient values should be ≤ 100g
+    valid_individual_nutrient_values = (merged_data[nutrient_cols] <= 100).all(axis=1)
+
+    # Condition 2: The sum of all nutrients should be ≤ 100g
+    valid_total_nutrient_sum = merged_data[nutrient_cols].sum(axis=1) <= 100
+
+    # Apply both conditions
+    merged_data = merged_data[valid_individual_nutrient_values & valid_total_nutrient_sum]
+
+    after_filtering = len(merged_data)
+
+    log_message(f"⚠️ Removed {before_filtering - after_filtering} entries due to invalid nutrient values.")
 
     # Compute "Others" column
     log_message("🔄 Calculating 'Others' column...")
